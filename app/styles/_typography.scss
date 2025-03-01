@@ -1,0 +1,132 @@
+@layer base {
+  :root {
+    /* Font Sizes for Body */
+    --font-size-body-1x-small: 10px;
+    --font-size-body-small: 12px;
+    --font-size-body-normal: 14px;
+    --font-size-body-big: 16px;
+    --font-size-body-large: 20px;
+
+    /* Font Sizes for Heading */
+    --font-size-heading-small: 16px;
+    --font-size-heading-normal: 24px;
+    --font-size-heading-big: 32px;
+    --font-size-heading-large: 40px;
+    --font-size-heading-1x-large: 56px;
+    --font-size-heading-2x-large: 72px;
+
+    /* Line Heights for Body */
+    --line-height-body-1x-small: 16px;
+    --line-height-body-small: 20px;
+    --line-height-body-normal: 24px;
+    --line-height-body-big: 28px;
+    --line-height-body-large: 32px;
+
+    /* Line Heights for Heading */
+    --line-height-heading-small: 24px;
+    --line-height-heading-normal: 36px;
+    --line-height-heading-big: 48px;
+    --line-height-heading-large: 60px;
+    --line-height-heading-1x-large: 84px;
+    --line-height-heading-2x-large: 108px;
+
+    /* Font Weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semi-bold: 600;
+  }
+
+  /* Mobile specific styles */
+  @media (max-width: 767px) {
+    :root {
+      /* Font Sizes for Body */
+      --font-size-body-1x-small: 10px;
+      --font-size-body-small: 12px;
+      --font-size-body-normal: 14px;
+      --font-size-body-big: 16px;
+      --font-size-body-large: 20px;
+
+      /* Font Sizes for Heading */
+      --font-size-heading-small: 16px;
+      --font-size-heading-normal: 20px;
+      --font-size-heading-big: 24px;
+      --font-size-heading-large: 28px;
+      --font-size-heading-1x-large: 36px;
+      --font-size-heading-2x-large: 44px;
+
+      /* Line Heights for Heading */
+      --line-height-heading-small: 24px;
+      --line-height-heading-normal: 32px;
+      --line-height-heading-big: 36px;
+      --line-height-heading-large: 48px;
+      --line-height-heading-1x-large: 56px;
+      --line-height-heading-2x-large: 68px;
+    }
+  }
+}
+
+/* Миксин для текста body */
+@mixin text-body($size) {
+  font-size: var(--font-size-body-#{$size});
+  line-height: var(--line-height-body-#{$size});
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+}
+
+/* Миксин для текста heading */
+@mixin text-heading($size) {
+  font-size: var(--font-size-heading-#{$size});
+  line-height: var(--line-height-heading-#{$size});
+  font-family: var(--font-manrope-sans);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+@layer utilities {
+  /* Классы для body */
+  .text-body-1x-small {
+    @include text-body('1x-small');
+  }
+  .text-body-small {
+    @include text-body('small');
+  }
+  .text-body-normal {
+    @include text-body('normal');
+  }
+  .text-body-big {
+    @include text-body('big');
+  }
+  .text-body-large {
+    @include text-body('large');
+  }
+
+  /* Классы для heading */
+  h1 {
+    @include text-heading('2x-large');
+  }
+  h2 {
+    @include text-heading('1x-large');
+  }
+  h3 {
+    @include text-heading('large');
+  }
+  h4 {
+    @include text-heading('big');
+  }
+  h5 {
+    @include text-heading('normal');
+  }
+  h6 {
+    @include text-heading('small');
+  }
+
+  /* Классы для веса шрифта */
+  .font-regular {
+    font-weight: var(--font-weight-regular);
+  }
+  .font-medium {
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semi-bold {
+    font-weight: var(--font-weight-semi-bold);
+  }
+}

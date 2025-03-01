@@ -1,0 +1,35 @@
+$spacing: (
+        "2x-small": 4,
+        "1x-small": 8,
+        "small": 12,
+        "normal": 16,
+        "large": 24,
+        "1x-large": 32,
+        "2x-large": 40,
+        "3x-large": 48,
+        "4x-large": 56,
+        "5x-large": 64,
+);
+
+:root {
+  @each $key, $value in $spacing {
+    --spacing-#{$key}: #{$value}px;
+  }
+}
+
+@layer utilities {
+  @each $name, $value in $spacing {
+    .mt-#{$name} {
+      margin-top: $value + px;
+    }
+    .mb-#{$name} {
+      margin-bottom: $value + px;
+    }
+    .pt-#{$name} {
+      padding-top: $value + px;
+    }
+    .pb-#{$name} {
+      padding-bottom: $value + px;
+    }
+  }
+}
