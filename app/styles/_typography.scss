@@ -1,19 +1,17 @@
 @layer base {
   :root {
+
+    /* Font Weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semi-bold: 600;
+
     /* Font Sizes for Body */
     --font-size-body-1x-small: 10px;
     --font-size-body-small: 12px;
     --font-size-body-normal: 14px;
     --font-size-body-big: 16px;
     --font-size-body-large: 20px;
-
-    /* Font Sizes for Heading */
-    --font-size-heading-small: 16px;
-    --font-size-heading-normal: 24px;
-    --font-size-heading-big: 32px;
-    --font-size-heading-large: 40px;
-    --font-size-heading-1x-large: 56px;
-    --font-size-heading-2x-large: 72px;
 
     /* Line Heights for Body */
     --line-height-body-1x-small: 16px;
@@ -22,45 +20,39 @@
     --line-height-body-big: 28px;
     --line-height-body-large: 32px;
 
+    /* Font Sizes for Heading */
+    --font-size-heading-normal: 20px;
+    --font-size-heading-big: 24px;
+    --font-size-heading-large: 28px;
+    --font-size-heading-1x-large: 36px;
+    --font-size-heading-2x-large: 44px;
+
     /* Line Heights for Heading */
     --line-height-heading-small: 24px;
-    --line-height-heading-normal: 36px;
-    --line-height-heading-big: 48px;
-    --line-height-heading-large: 60px;
-    --line-height-heading-1x-large: 84px;
-    --line-height-heading-2x-large: 108px;
-
-    /* Font Weights */
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-semi-bold: 600;
+    --line-height-heading-normal: 32px;
+    --line-height-heading-big: 36px;
+    --line-height-heading-large: 48px;
+    --line-height-heading-1x-large: 56px;
+    --line-height-heading-2x-large: 68px;
   }
 
   /* Mobile specific styles */
-  @media (max-width: 767px) {
+  @screen(md) {
     :root {
-      /* Font Sizes for Body */
-      --font-size-body-1x-small: 10px;
-      --font-size-body-small: 12px;
-      --font-size-body-normal: 14px;
-      --font-size-body-big: 16px;
-      --font-size-body-large: 20px;
-
       /* Font Sizes for Heading */
       --font-size-heading-small: 16px;
-      --font-size-heading-normal: 20px;
-      --font-size-heading-big: 24px;
-      --font-size-heading-large: 28px;
-      --font-size-heading-1x-large: 36px;
-      --font-size-heading-2x-large: 44px;
+      --font-size-heading-normal: 24px;
+      --font-size-heading-big: 32px;
+      --font-size-heading-large: 40px;
+      --font-size-heading-1x-large: 56px;
+      --font-size-heading-2x-large: 72px;
 
       /* Line Heights for Heading */
-      --line-height-heading-small: 24px;
-      --line-height-heading-normal: 32px;
-      --line-height-heading-big: 36px;
-      --line-height-heading-large: 48px;
-      --line-height-heading-1x-large: 56px;
-      --line-height-heading-2x-large: 68px;
+      --line-height-heading-normal: 36px;
+      --line-height-heading-big: 48px;
+      --line-height-heading-large: 60px;
+      --line-height-heading-1x-large: 84px;
+      --line-height-heading-2x-large: 108px;
     }
   }
 }
