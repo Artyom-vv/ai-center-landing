@@ -1,0 +1,118 @@
+@layer base {
+  @theme {
+    /* Neutral Colors */
+    --color-white: #FFFFFFFF;
+    --color-black: #000000FF;
+    --color-gray-50: #F2F2F2FF;
+    --color-gray-100: #E5E5E5FF;
+    --color-gray-150: #D9D9D9FF;
+    --color-gray-200: #CCCCCCFF;
+    --color-gray-250: #BFBFBFFF;
+    --color-gray-300: #B2B2B2FF;
+    --color-gray-400: #999999FF;
+    --color-gray-500: #808080FF;
+    --color-gray-600: #666666FF;
+    --color-gray-700: #4D4D4DFF;
+    --color-gray-750: #404040FF;
+    --color-gray-800: #333333FF;
+    --color-gray-850: #262626FF;
+    --color-gray-900: #1A1A1AFF;
+    --color-gray-950: #0D0D0DFF;
+
+    /* Brand Colors */
+    --color-brand-blue-50: #EBF0FAFF;
+    --color-brand-blue-100: #D6E0F5FF;
+    --color-brand-blue-150: #C2D1F0FF;
+    --color-brand-blue-200: #ADC2EBFF;
+    --color-brand-blue-300: #85A3E0FF;
+    --color-brand-blue-400: #477EEBFF;
+    --color-brand-blue-500: #1A5DE5FF;
+    --color-brand-blue-600: #144BB8FF;
+    --color-brand-blue-700: #0F388AFF;
+    --color-brand-blue-800: #0A255CFF;
+    --color-brand-blue-850: #081C45FF;
+    --color-brand-blue-900: #001133FF;
+    --color-brand-blue-950: #00091AFF;
+
+    /* Error Colors */
+    --color-error-red-50: #FAEBEBFF;
+    --color-error-red-100: #F5D6D6FF;
+    --color-error-red-200: #EBADADFF;
+    --color-error-red-300: #E08585FF;
+    --color-error-red-400: #EB4747FF;
+    --color-error-red-500: #E51A1AFF;
+    --color-error-red-600: #B81414FF;
+    --color-error-red-700: #8A0F0FFF;
+    --color-error-red-800: #5C0A0AFF;
+    --color-error-red-900: #330000FF;
+    --color-error-red-950: #1A0000FF;
+
+    /* Semantic Colors */
+    --color-semantic-neutral-text-heading-bright: var(--color-gray-950);
+    --color-semantic-neutral-text-heading-dark: var(--color-gray-50);
+    --color-semantic-neutral-text-primary-bright: var(--color-gray-800);
+    --color-semantic-neutral-text-primary-dark: var(--color-gray-100);
+    --color-semantic-neutral-text-secondary-bright: var(--color-gray-600);
+    --color-semantic-neutral-text-secondary-dark: var(--color-gray-200);
+    --color-semantic-neutral-text-tertiary-bright: var(--color-gray-400);
+    --color-semantic-neutral-text-tertiary-dark: var(--color-gray-300);
+    --color-semantic-neutral-text-disabled-bright: var(--color-gray-300);
+    --color-semantic-neutral-text-disabled-dark: var(--color-gray-400);
+
+    --color-semantic-neutral-background-surface-bright: var(--color-white);
+    --color-semantic-neutral-background-surface-dark: var(--color-black);
+    --color-semantic-neutral-background-subtle-bright: var(--color-gray-50);
+    --color-semantic-neutral-background-subtle-dark: var(--color-gray-950);
+    --color-semantic-neutral-background-on-subtle-bright: var(--color-gray-100);
+    --color-semantic-neutral-background-on-subtle-dark: var(--color-gray-900);
+
+    --color-semantic-brand-main-default-bright: var(--color-brand-blue-500);
+    --color-semantic-brand-main-default-dark: var(--color-brand-blue-500);
+    --color-semantic-brand-main-hover-bright: var(--color-brand-blue-400);
+    --color-semantic-brand-main-hover-dark: var(--color-brand-blue-400);
+    --color-semantic-brand-main-active-bright: var(--color-brand-blue-600);
+    --color-semantic-brand-main-active-dark: var(--color-brand-blue-600);
+
+    --color-semantic-brand-border-default-bright: var(--color-brand-blue-100);
+    --color-semantic-brand-border-default-dark: var(--color-brand-blue-800);
+    --color-semantic-brand-border-hover-bright: var(--color-brand-blue-200);
+    --color-semantic-brand-border-hover-dark: var(--color-brand-blue-700);
+    --color-semantic-brand-border-active-bright: var(--color-brand-blue-300);
+    --color-semantic-brand-border-active-dark: var(--color-brand-blue-900);
+
+    --color-semantic-brand-text-default-bright: var(--color-brand-blue-500);
+    --color-semantic-brand-text-default-dark: var(--color-brand-blue-500);
+    --color-semantic-brand-text-hover-bright: var(--color-brand-blue-400);
+    --color-semantic-brand-text-hover-dark: var(--color-brand-blue-400);
+    --color-semantic-brand-text-active-bright: var(--color-brand-blue-600);
+    --color-semantic-brand-text-active-dark: var(--color-brand-blue-600);
+
+    --color-semantic-brand-background-default-bright: var(--color-brand-blue-50);
+    --color-semantic-brand-background-default-dark: var(--color-brand-blue-900);
+    --color-semantic-brand-background-hover-bright: var(--color-brand-blue-100);
+    --color-semantic-brand-background-hover-dark: var(--color-brand-blue-850);
+    --color-semantic-brand-background-active-bright: var(--color-brand-blue-150);
+    --color-semantic-brand-background-active-dark: var(--color-brand-blue-950);
+
+    --color-semantic-error-main-default-bright: var(--color-error-red-500);
+    --color-semantic-error-main-default-dark: var(--color-error-red-500);
+    --color-semantic-error-main-hover-bright: var(--color-error-red-400);
+    --color-semantic-error-main-hover-dark: var(--color-error-red-400);
+    --color-semantic-error-main-active-bright: var(--color-error-red-600);
+    --color-semantic-error-main-active-dark: var(--color-error-red-600);
+
+    --color-semantic-error-border-default-bright: var(--color-error-red-100);
+    --color-semantic-error-border-default-dark: var(--color-error-red-800);
+    --color-semantic-error-border-hover-bright: var(--color-error-red-200);
+    --color-semantic-error-border-hover-dark: var(--color-error-red-700);
+    --color-semantic-error-border-active-bright: var(--color-error-red-300);
+    --color-semantic-error-border-active-dark: var(--color-error-red-900);
+
+    --color-semantic-error-background-default-bright: var(--color-error-red-50);
+    --color-semantic-error-background-default-dark: var(--color-error-red-900);
+    --color-semantic-error-background-hover-bright: var(--color-error-red-100);
+    --color-semantic-error-background-hover-dark: var(--color-error-red-850);
+    --color-semantic-error-background-active-bright: var(--color-error-red-200);
+    --color-semantic-error-background-active-dark: var(--color-error-red-950);
+  }
+}

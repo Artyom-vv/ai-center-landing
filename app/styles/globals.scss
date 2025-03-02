@@ -1,6 +1,8 @@
 @use "tailwindcss";
-@use "spacing";
 @use "typography";
+@use "dimensions";
+@use "colors";
+@use "spacing";
 
 html, body {
     height: 100%;
