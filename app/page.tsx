@@ -1,3 +1,4 @@
+import Button from "@/app/components/Button";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
           <p className="text-body-normal">Trash smallest / Треш поменьше</p>
           <p className="text-body-big">Trash smallest / Треш поменьше</p>
           <p className="text-body-large">Trash smallest / Треш поменьше</p>
+          <Button isDisabled={true}>Trash</Button>
       </div>
   );
 }
