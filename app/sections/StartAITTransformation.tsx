@@ -1,9 +1,6 @@
 import React from 'react';
 import Section from "@/app/components/Section";
 import StatsPanel from "@/app/components/StatsPanel";
-import ChatAiLine from "@/public/svg/chat-ai-line.svg";
-import ChatSmileAiLine from "@/public/svg/chat-smile-ai-line.svg";
-import BarChatBoxAiLine from "@/public/svg/bar-chart-box-ai-line.svg";
 import TiltedCards from "@/app/components/TiltedCards";
 
 const StartAitTransformation = () => {
