@@ -1,71 +1,77 @@
-@layer base {
-  @theme {
-    /* Font Weights */
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-semi-bold: 600;
+@theme {
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
 
-    /* Font Sizes for Body (Mobile First) */
-    --text-body-1x-small: 10px;
-    --text-body-small: 12px;
-    --text-body-normal: 14px;
-    --text-body-big: 16px;
-    --text-body-large: 20px;
+  /* Font Sizes for Body (Mobile First) */
+  --text-body-1x-small: 10px;
+  --text-body-small: 12px;
+  --text-body-normal: 14px;
+  --text-body-big: 16px;
+  --text-body-large: 20px;
 
-    /* Line Heights for Body (Mobile First) */
-    --leading-body-1x-small: 16px;
-    --leading-body-small: 20px;
-    --leading-body-normal: 24px;
-    --leading-body-big: 28px;
-    --leading-body-large: 32px;
+  /* Line Heights for Body (Mobile First) */
+  --leading-body-1x-small: 16px;
+  --leading-body-small: 20px;
+  --leading-body-normal: 24px;
+  --leading-body-big: 28px;
+  --leading-body-large: 32px;
 
-    /* Font Sizes for Heading (Mobile First) */
+  /* Font Sizes for Heading (Mobile First) */
+  --text-heading-small: 16px;
+  --text-heading-normal: 20px;
+  --text-heading-big: 24px;
+  --text-heading-large: 28px;
+  --text-heading-1x-large: 36px;
+  --text-heading-2x-large: 44px;
+
+  /* Line Heights for Heading (Mobile First) */
+  --leading-heading-small: 24px;
+  --leading-heading-normal: 32px;
+  --leading-heading-big: 36px;
+  --leading-heading-large: 48px;
+  --leading-heading-1x-large: 56px;
+  --leading-heading-2x-large: 68px;
+}
+
+/* Desktop specific styles */
+@media (min-width: 769px) {
+  :root {
+    /* Font Sizes for Heading (Desktop) */
     --text-heading-small: 16px;
-    --text-heading-normal: 20px;
-    --text-heading-big: 24px;
-    --text-heading-large: 28px;
-    --text-heading-1x-large: 36px;
-    --text-heading-2x-large: 44px;
+    --text-heading-normal: 24px;
+    --text-heading-big: 32px;
+    --text-heading-large: 40px;
+    --text-heading-1x-large: 56px;
+    --text-heading-2x-large: 72px;
 
-    /* Line Heights for Heading (Mobile First) */
+    /* Line Heights for Heading (Desktop) */
     --leading-heading-small: 24px;
-    --leading-heading-normal: 32px;
-    --leading-heading-big: 36px;
-    --leading-heading-large: 48px;
-    --leading-heading-1x-large: 56px;
-    --leading-heading-2x-large: 68px;
+    --leading-heading-normal: 36px;
+    --leading-heading-big: 48px;
+    --leading-heading-large: 60px;
+    --leading-heading-1x-large: 84px;
+    --leading-heading-2x-large: 108px;
   }
+}
 
-  /* Desktop specific styles */
-  @media (min-width: 769px) {
-    :root {
-      /* Font Sizes for Heading (Desktop) */
-      --text-heading-small: 16px;
-      --text-heading-normal: 24px;
-      --text-heading-big: 32px;
-      --text-heading-large: 40px;
-      --text-heading-1x-large: 56px;
-      --text-heading-2x-large: 72px;
+@utility font-body {
+  font-family: var(--font-roboto);
+}
 
-      /* Line Heights for Heading (Desktop) */
-      --leading-heading-small: 24px;
-      --leading-heading-normal: 36px;
-      --leading-heading-big: 48px;
-      --leading-heading-large: 60px;
-      --leading-heading-1x-large: 84px;
-      --leading-heading-2x-large: 108px;
-    }
-  }
+@utility font-heading {
+  font-family: var(--font-manrope-sans);
 }
 
 @utility text-body {
-  font-family: var(--font-roboto);
   font-weight: var(--font-weight-regular);
+  @apply text-neutral-text-heading font-body;
 }
 
 @utility text-heading {
-  font-family: var(--font-manrope-sans);
   font-weight: var(--font-weight-semi-bold);
+  @apply text-neutral-text-heading font-heading;
 }
 
 
@@ -74,7 +80,7 @@
 }
 
 @mixin text-body($size) {
-  @apply leading-body-#{$size} text-body-#{$size} text-body;
+  @apply leading-body-#{$size} text-body;
 }
 
 @layer utilities {
@@ -92,6 +98,10 @@
   }
   .text-body-large {
     @include text-body(large)
+  }
+
+  h1,h2,h3,h4,h5,h6,p,span {
+    margin: 0;
   }
 
   h6 {

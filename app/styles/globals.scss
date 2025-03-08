@@ -1,11 +1,16 @@
-@use "tailwindcss";
+@use "tailwind";
+@use "breakpoints";
 @use "typography";
 @use "dimensions";
 @use "colors";
+@use "stroke";
 @use "size";
 @use "spacing";
 @use "theme";
+@use "utilities";
 
 html, body {
+    margin: 0;
     height: 100%;
+    @apply bg-neutral-bg-surface;
 }
