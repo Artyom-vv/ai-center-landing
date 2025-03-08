@@ -8,7 +8,7 @@ const Header = () => {
         <header className="py-normal w-full">
             <div className="container flex gap-4 justify-between items-center">
                 <div className="grow">
-                    <a href="/" className="text-body-big font-heading font-medium no-underline">Центр
+                    <a href="#" className="text-body-big font-heading font-medium no-underline">Центр
                         ИИ-трансформации</a>
                 </div>
                 <div className="flex gap-1x-large justify-center basis-[632px]">
