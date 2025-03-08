@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Manrope, Roboto } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./styles/globals.scss";
 
 const manropeSans = Manrope({
   variable: "--font-manrope-sans",
-  subsets: ["latin", "cyrillic"],
-});
-
-const roboto = Roboto({
-  variable: "--font-roboto",
   subsets: ["latin", "cyrillic"],
 });
 
@@ -25,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body
-        className={`${manropeSans.variable} ${roboto.variable} antialiased`}
+        className={`${manropeSans.variable} antialiased`}
       >
         {children}
       </body>

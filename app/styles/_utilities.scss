@@ -1,3 +1,9 @@
 @utility container {
   @apply mx-auto px-normal xl:px-[80px] md:px-[68px]
 }
+
+@utility hero-text-gradient {
+  background: linear-gradient(90deg, #1A5DE6 0%, #1AA2E6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

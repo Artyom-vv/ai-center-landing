@@ -56,17 +56,13 @@
   }
 }
 
-@utility font-body {
-  font-family: var(--font-roboto);
-}
-
 @utility font-heading {
   font-family: var(--font-manrope-sans);
 }
 
 @utility text-body {
   font-weight: var(--font-weight-regular);
-  @apply text-neutral-text-heading font-body;
+  @apply text-neutral-text-heading font-heading;
 }
 
 @utility text-heading {

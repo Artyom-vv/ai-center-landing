@@ -5,10 +5,9 @@ import {useButton} from "react-aria";
 import {AriaButtonOptions} from "@react-aria/button";
 import cn from "classnames";
 import {cva} from "class-variance-authority";
+import {HTMLButtonAriaProps} from "@/app/components/types/aria-button";
 
-export type HTMLButtonAriaProps = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onBlur' | 'onFocus' | 'onKeyUp' | 'onKeyDown'>
-
-export interface IButtonProps extends AriaButtonOptions<'button'>, HTMLButtonAriaProps {
+export interface ButtonProps extends AriaButtonOptions<'button'>, HTMLButtonAriaProps {
     children?: React.ReactNode;
     size?: "1x-large" | "large";
     leftIcon?: React.ReactNode;
@@ -41,12 +40,10 @@ const button = cva(
     })
 
 
-const Button: FC<IButtonProps> = ({children, leftIcon, size = 'large', ...props}) => {
+const Button: FC<ButtonProps> = ({children, leftIcon, size = 'large', ...props}) => {
 
     const ref = useRef<HTMLButtonElement>(null);
-    const {isPressed, buttonProps} = useButton({
-        ...props
-    }, ref)
+    const {isPressed, buttonProps} = useButton(props, ref)
 
     return (
         <button

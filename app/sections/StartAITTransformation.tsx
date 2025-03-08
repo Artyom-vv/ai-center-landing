@@ -1,26 +1,16 @@
 import React from 'react';
 import Section from "@/app/components/Section";
-import ChipGroup from "@/app/components/ui/ChipGroup";
-import Chip from "@/app/components/ui/Chip";
+import StatsPanel from "@/app/components/StatsPanel";
+import ChatAiLine from "@/public/svg/chat-ai-line.svg";
+import ChatSmileAiLine from "@/public/svg/chat-smile-ai-line.svg";
+import BarChatBoxAiLine from "@/public/svg/bar-chart-box-ai-line.svg";
 import TiltedCards from "@/app/components/TiltedCards";
-import AdvantagePanel from "@/app/components/AdvantagePanel";
-import ChatAiLine from "../../public/svg/chat-ai-line.svg"
-import ChatSmileAiLine from "../../public/svg/chat-smile-ai-line.svg"
-import BarChatBoxAiLine from "../../public/svg/bar-chart-box-ai-line.svg"
 
-const TransformBusinessAi = () => {
-
+const StartAitTransformation = () => {
     return (
-        <Section
-            title="Трансформируйте бизнес
-            с ИИ">
-            <ChipGroup className="self-center">
-                <Chip isDisabled={true}>Повысьте эффективность</Chip>
-                <Chip isDisabled={true}>Ускорьте процессы</Chip>
-                <Chip isDisabled={true}>Увеличьте прибыль</Chip>
-            </ChipGroup>
+        <Section title=" Приступите к ИИ-трансформации уже сегодня! ">
             <TiltedCards>
-                <AdvantagePanel
+                <StatsPanel
                     title="Интерактивные чат-робо﻿ты"
                     description={<>
                         - Работают 24/7<br/>
@@ -29,9 +19,9 @@ const TransformBusinessAi = () => {
                         - Повышают качество сервиса<br/>
                         - Легко интегрируются с CRM<br/>
                     </>}
-                    icon={<ChatAiLine/>}
+                    src="/stats/1.png"
                 />
-                <AdvantagePanel
+                <StatsPanel
                     title="Продвинутая анали﻿тика"
                     description={<>
                         ИИ-инструменты для аналитики:<br/>
@@ -40,9 +30,9 @@ const TransformBusinessAi = () => {
                         - Предотвращают риски<br/>
                         Принимайте только обоснованные решения.<br/>
                     </>}
-                    icon={<ChatSmileAiLine/>}
+                    src="/stats/2.png"
                 />
-                <AdvantagePanel
+                <StatsPanel
                     title="Продвинутая анали﻿тика"
                     description={<>
                         ИИ-инструменты для аналитики:<br/>
@@ -51,11 +41,11 @@ const TransformBusinessAi = () => {
                         - Предотвращают риски<br/>
                         Принимайте только обоснованные решения.<br/>
                     </>}
-                    icon={<BarChatBoxAiLine/>}
+                    src="/stats/3.png"
                 />
             </TiltedCards>
         </Section>
     );
 };
 
-export default TransformBusinessAi;
+export default StartAitTransformation;
