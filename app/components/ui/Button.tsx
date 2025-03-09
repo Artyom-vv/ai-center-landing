@@ -13,7 +13,7 @@ export interface ButtonProps extends AriaButtonOptions<'button'>, HTMLButtonAria
     leftIcon?: React.ReactNode;
 }
 
-const button = cva(
+const buttonVariants = cva(
     "transition duration-300 flex items-center gap-1x-small rounded-[8px] cursor-pointer border-thick border-solid border-transparent whitespace-nowrap",
     {
         variants: {
@@ -52,7 +52,7 @@ const Button: FC<ButtonProps> = ({children, leftIcon, size = 'large', ...props})
             {...buttonProps}
             className={cn(
                 props.className,
-                button({
+                buttonVariants({
                     size: size,
                     disabled: buttonProps.disabled,
                     pressed: isPressed

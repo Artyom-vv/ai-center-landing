@@ -9,17 +9,23 @@ export interface LandingPanelProps extends LandingPanelBaseProps {
     description: ReactNode
 }
 
-export type LandingPanelBaseProps = HTMLProps<HTMLDivElement>;
+export interface LandingPanelBaseProps extends HTMLProps<HTMLDivElement> {
+    tiltClass?: string
+    glareColor?: string
+}
 
-const LandingPanel: FC<LandingPanelBaseProps> = ({children, ...props}) => {
+const LandingPanel: FC<LandingPanelBaseProps> = ({children, tiltClass, glareColor = "var(--color-neutral-bg-subtle-hover)", ...props}) => {
     return (
         <Tilt
             glareEnable={true}
             glareMaxOpacity={0.5}
-            glareColor="var(--color-neutral-bg-subtle-hover)"
-            tiltMaxAngleX={5}
-            tiltMaxAngleY={5}
-            className="rounded-[16px] overflow-hidden bg-neutral-bg-subtle-default"
+            glareColor={glareColor}
+            tiltMaxAngleX={7}
+            tiltMaxAngleY={7}
+            className={cn(
+                "rounded-[16px] overflow-hidden bg-neutral-bg-subtle-default grow",
+                tiltClass
+            )}
         >
             <div
                 {...props}

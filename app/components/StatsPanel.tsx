@@ -1,7 +1,6 @@
 import React, {FC} from 'react';
 import LandingPanel, {LandingPanelProps} from "@/app/components/LandingPanel";
 import cn from "classnames";
-import Image from 'next/image';
 
 export interface StatsPanelProps extends LandingPanelProps {
     src: string;
@@ -15,7 +14,7 @@ const StatsPanel: FC<StatsPanelProps> = ({title, description, src, ...props}) =>
         )}>
             <h5>{title}</h5>
             <p className="text-body-big text-neutral-text-secondary">{description}</p>
-            <Image className="bg-[red] mt-auto object-cover w-full rounded-[8px] h-[198px] overflow-hidden " src={src} alt={title}/>
+            <img className="mt-auto object-cover w-full rounded-[8px] h-[198px] overflow-hidden" src={src} alt={title}/>
         </LandingPanel>
     );
 };

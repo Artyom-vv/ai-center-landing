@@ -13,18 +13,19 @@ export interface ChipProps extends AriaButtonOptions<'button'>, HTMLButtonAriaPr
     isSelected?: boolean;
     onSelect?: () => void;
     value?: string;
+    onSubtle?: boolean
 }
 
 const chipVariants = cva(
-    "transition duration-300 rounded-[8px] [&:not(:disabled)]:cursor-pointer flex items-center border-none text-neutral-text-primary",
+    "transition duration-300 rounded-[8px] flex items-center border-none",
     {
         variants: {
             intent: {
-                secondary: "bg-neutral-bg-subtle-default [&:not(:disabled)]:hover:bg-neutral-bg-subtle-hover",
+                secondary: null
             },
             selected: {
-                true: "bg-brand-main-default text-white",
-                false: "bg-neutral-bg-on-subtle-default text-neutral-solid",
+                false: null,
+                true: null
             },
             size: {
                 large: "px-normal h-(--size-large) text-body-big font-heading",
@@ -33,24 +34,108 @@ const chipVariants = cva(
             },
             pressed: {
                 false: null,
-                true: "!bg-neutral-bg-subtle-active"
+                true: null
+            },
+            onSubtle: {
+                false: null,
+                true: null
             },
             disabled: {
                 true: null,
-                false: null
-            }
+                false: "cursor-pointer"
+            },
         },
+        compoundVariants: [
+            {
+                intent: "secondary",
+                selected: true,
+                className: "text-neutral-solid-white"
+            },
+            {
+                intent: "secondary",
+                selected: false,
+                className: "text-neutral-text-primary"
+            },
+            {
+                intent: "secondary",
+                selected: true,
+                onSubtle: true,
+                pressed: false,
+                className: "bg-brand-main-default"
+            },
+            {
+                intent: "secondary",
+                selected: true,
+                onSubtle: true,
+                pressed: false,
+                disabled: false,
+                className: "hover:bg-brand-main-hover"
+            },
+            {
+                intent: "secondary",
+                selected: true,
+                pressed: true,
+                disabled: false,
+                className: "bg-brand-main-active"
+            },
+            {
+                intent: "secondary",
+                selected: false,
+                pressed: false,
+                onSubtle: false,
+                className: "bg-neutral-bg-subtle-default"
+            },
+            {
+                intent: "secondary",
+                selected: false,
+                disabled: false,
+                pressed: false,
+                onSubtle: false,
+                className: "hover:bg-neutral-bg-subtle-hover"
+            },
+            {
+                intent: "secondary",
+                selected: false,
+                disabled: false,
+                pressed: true,
+                onSubtle: false,
+                className: "bg-neutral-bg-subtle-active"
+            },
+            {
+                intent: "secondary",
+                selected: false,
+                pressed: false,
+                onSubtle: true,
+                className: "bg-neutral-bg-on-subtle-default"
+            },
+            {
+                intent: "secondary",
+                selected: false,
+                disabled: false,
+                pressed: false,
+                onSubtle: true,
+                className: "hover:bg-neutral-bg-on-subtle-hover"
+            },
+            {
+                intent: "secondary",
+                selected: false,
+                disabled: false,
+                pressed: true,
+                onSubtle: true,
+                className: "bg-neutral-bg-on-subtle-active"
+            }
+        ],
         defaultVariants: {
-            selected: false,
-            pressed: false,
             intent: "secondary",
             size: "large",
+            selected: false,
+            pressed: false,
             disabled: false
         },
     }
 );
 
-const Chip: FC<ChipProps> = ({children, isSelected = false, onSelect, size, isDisabled, ...props}) => {
+const Chip: FC<ChipProps> = ({children, isSelected = false, onSubtle = false, onSelect, size, isDisabled, ...props}) => {
 
     const ref = useRef<HTMLButtonElement>(null);
     const {isPressed, buttonProps} = useButton({...props, isDisabled}, ref);
@@ -65,8 +150,11 @@ const Chip: FC<ChipProps> = ({children, isSelected = false, onSelect, size, isDi
                 chipVariants({
                     selected: isSelected,
                     pressed: isPressed,
-                    size
-                })
+                    disabled: isDisabled,
+                    size,
+                    onSubtle: onSubtle
+                }),
+                props.className
             )}
         >
             {children}
