@@ -17,7 +17,7 @@ const NewsPanel: FC<NewsPanelProps> = ({title, description, link, linkLabel, ...
                 props.className,
                 "h-[464px]"
             )}
-            tiltClass="!bg-neutral-bg-on-subtle-default"
+            panelClass="!bg-neutral-bg-on-subtle-default"
             glareColor="var(--color-neutral-bg-on-subtle-hover)"
         >
             <div className="mt-auto space-y-small">

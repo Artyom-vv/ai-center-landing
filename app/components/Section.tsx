@@ -1,15 +1,20 @@
 import React, {FC, ReactNode} from 'react';
+import cn from "classnames";
 
 export interface SectionProps {
     title?: ReactNode | string;
     subtitle?: ReactNode | string;
     children?: ReactNode;
+    containerClass?: string
 }
 
-const Section: FC<SectionProps> = ({title, subtitle, children}) => {
+const Section: FC<SectionProps> = ({title, subtitle, containerClass, children}) => {
     return (
         <section className="py-[96px]">
-            <div className="container space-y-1x-large flex flex-col">
+            <div className={cn(
+                "container space-y-1x-large flex flex-col",
+                containerClass
+            )}>
                 <div className="flex flex-col items-center space-y-normal text-center">
                     {title && (
                         <h4>{title}</h4>
