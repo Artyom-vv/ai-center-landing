@@ -6,8 +6,9 @@ import {HTMLButtonAriaProps} from "@/app/components/types/aria-button";
 import {useButton} from "react-aria";
 import {cva} from "class-variance-authority";
 import NextLink, {LinkProps as NextLinkProps} from "next/link";
+import cn from "classnames";
 
-export interface LinkProps extends Omit<AriaButtonOptions<'button'>, 'href'>, HTMLButtonAriaProps, Omit<NextLinkProps, 'href' | 'onClick' | 'onMouseEnter' | 'onTouchStart' > {
+export interface LinkProps extends Omit<AriaButtonOptions<'button'>, 'href'>, HTMLButtonAriaProps, Omit<NextLinkProps, 'href' | 'onClick' | 'onMouseEnter' | 'onTouchStart'> {
     href: string;
     children?: ReactNode;
     size?: "large";
@@ -47,18 +48,20 @@ const Link: FC<LinkProps> = ({children, size, isDisabled, leftIcon, rightIcon, .
     return (
         <NextLink
             className="no-underline"
+            target={props.target}
             href={props.href}
-            {...props}
         >
             <button
                 ref={ref}
                 {...props}
                 {...buttonProps}
-                className={linkVariants({
-                    size,
-                    disabled: isDisabled,
-                    pressed: isPressed,
-                })}
+                className={cn(
+                    linkVariants({
+                        size,
+                        disabled: isDisabled,
+                        pressed: isPressed,
+                    }), props.className
+                )}
             >
                 {leftIcon}
                 {children}

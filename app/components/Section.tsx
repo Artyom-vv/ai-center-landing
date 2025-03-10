@@ -3,7 +3,7 @@ import React, {FC, ReactNode} from 'react';
 export interface SectionProps {
     title?: ReactNode | string;
     subtitle?: ReactNode | string;
-    children: ReactNode;
+    children?: ReactNode;
 }
 
 const Section: FC<SectionProps> = ({title, subtitle, children}) => {
