@@ -17,7 +17,7 @@ export interface ChipProps extends AriaButtonOptions<'button'>, HTMLButtonAriaPr
 }
 
 const chipVariants = cva(
-    "transition duration-300 rounded-[8px] flex items-center border-none",
+    "transition duration-300 rounded-[8px] flex items-center border-none border-[1px] border-solid",
     {
         variants: {
             intent: {
@@ -46,6 +46,10 @@ const chipVariants = cva(
             },
         },
         compoundVariants: [
+            {
+              selected: false,
+              className: "border-transparent"
+            },
             {
                 intent: "secondary",
                 selected: true,
@@ -77,6 +81,29 @@ const chipVariants = cva(
                 pressed: true,
                 disabled: false,
                 className: "bg-brand-main-active"
+            },
+            {
+                intent: "secondary",
+                selected: true,
+                pressed: false,
+                onSubtle: false,
+                className: "bg-neutral-bg-on-subtle-default border-neutral-border-on-subtle-default"
+            },
+            {
+                intent: "secondary",
+                selected: true,
+                disabled: false,
+                pressed: false,
+                onSubtle: false,
+                className: "hover:bg-neutral-bg-on-subtle-hover hover:border-neutral-border-on-subtle-hover"
+            },
+            {
+                intent: "secondary",
+                selected: true,
+                disabled: false,
+                pressed: true,
+                onSubtle: false,
+                className: "bg-neutral-bg-on-subtle-active border-neutral-border-on-subtle-active"
             },
             {
                 intent: "secondary",
@@ -138,14 +165,16 @@ const chipVariants = cva(
 const Chip: FC<ChipProps> = ({children, isSelected = false, onSubtle = false, onSelect, size, isDisabled, ...props}) => {
 
     const ref = useRef<HTMLButtonElement>(null);
-    const {isPressed, buttonProps} = useButton({...props, isDisabled}, ref);
+    const {isPressed, buttonProps} = useButton({
+        ...props,
+        onPress: onSelect,
+        isDisabled}, ref);
 
     return (
         <button
             ref={ref}
             {...props}
             {...buttonProps}
-            onClick={onSelect}
             className={cn(
                 chipVariants({
                     selected: isSelected,
