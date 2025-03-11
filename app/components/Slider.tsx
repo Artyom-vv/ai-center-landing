@@ -40,8 +40,8 @@ const Slider: FC<SliderProps> = ({ slides }) => {
                         </div>
                     </div>
                     <div className="flex gap-1x-small">
-                        <Button iconOnly variant="secondary" onClick={prevSlide}><ArrowLeft/></Button>
-                        <Button iconOnly variant="secondary" onClick={nextSlide}><ArrowRight/></Button>
+                        <Button iconOnly variant="secondary" onPress={prevSlide}><ArrowLeft/></Button>
+                        <Button iconOnly variant="secondary" onPress={nextSlide}><ArrowRight/></Button>
                     </div>
                 </div>
             </div>

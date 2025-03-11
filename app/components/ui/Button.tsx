@@ -63,10 +63,13 @@ const buttonVariants = cva(
     })
 
 
-const Button: FC<ButtonProps> = ({children, leftIcon, iconOnly = false, variant = 'primary', size = 'large', ...props}) => {
+const Button: FC<ButtonProps> = ({children, leftIcon, iconOnly = false, variant = 'primary', size = 'large', onPress, ...props}) => {
 
     const ref = useRef<HTMLButtonElement>(null);
-    const {isPressed, buttonProps} = useButton(props, ref)
+    const {isPressed, buttonProps} = useButton({
+        ...props,
+        onPress
+    }, ref)
 
     return (
         <button
