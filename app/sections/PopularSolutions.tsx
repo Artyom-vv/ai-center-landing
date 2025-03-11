@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from "@/app/components/Section";
 import PersonPanel from "@/app/components/PersonPanel";
+import AnimatedCards from "@/app/components/AnimatedCards";
 
 const PopularSolutions = () => {
     return (
@@ -11,22 +12,26 @@ const PopularSolutions = () => {
             </>}
             containerClass="space-y-[0]"
         >
-            <div className="space-y-normal rotate-[-1.5deg] mt-5x-large">
-                <div className="flex gap-normal">
-                    <PersonPanel title="Логисты" src="/persons/1.png"></PersonPanel>
-                    <PersonPanel title="Логисты" src="/persons/1.png"></PersonPanel>
-                    <PersonPanel title="Логисты" src="/persons/1.png"></PersonPanel>
-                    <PersonPanel title="Логисты" src="/persons/1.png"></PersonPanel>
-                    <PersonPanel title="Логисты" src="/persons/1.png"></PersonPanel>
-                </div>
-                <div className="flex gap-normal -translate-x-1/3">
-                    <PersonPanel title="Консультанты" src="/persons/1.png"></PersonPanel>
-                    <PersonPanel title="Консультанты" src="/persons/1.png"></PersonPanel>
-                    <PersonPanel title="Консультанты" src="/persons/1.png"></PersonPanel>
-                    <PersonPanel title="Консультанты" src="/persons/1.png"></PersonPanel>
-                    <PersonPanel title="Консультанты" src="/persons/1.png"></PersonPanel>
-                </div>
-            </div>
+            <AnimatedCards
+                firstRowCards={(
+                    <>
+                        <PersonPanel title="Логисты" src="/persons/1.png"></PersonPanel>
+                        <PersonPanel title="Менеджеры" src="/persons/2.png"></PersonPanel>
+                        <PersonPanel title="Кураторы" src="/persons/3.png"></PersonPanel>
+                        <PersonPanel title="Отдел качества" src="/persons/4.png"></PersonPanel>
+                    </>
+                )}
+                secondRowCards={(
+                    <>
+                        <PersonPanel title="Аналитики" src="/persons/5.png"></PersonPanel>
+                        <PersonPanel title="Консультанты" src="/persons/6.png"></PersonPanel>
+                        <PersonPanel title="Маркетологи" src="/persons/7.png"></PersonPanel>
+                        <PersonPanel title="Финансисты" src="/persons/8.png"></PersonPanel>
+                    </>
+                )}
+            >
+
+            </AnimatedCards>
         </Section>
     );
 };

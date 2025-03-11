@@ -12,6 +12,7 @@
     "@svgr/webpack": "^8.1.0",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
+    "framer-motion": "^12.4.11",
     "next": "15.2.0",
     "react": "^19.0.0",
     "react-aria": "^3.37.0",

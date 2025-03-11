@@ -17,6 +17,11 @@ export interface LandingPanelBaseProps extends HTMLProps<HTMLDivElement> {
 
 const LandingPanel: FC<LandingPanelBaseProps> = ({children, panelClass, tiltEnable = true, glareColor = "var(--color-neutral-bg-subtle-hover)", ...props}) => {
 
+    const panelClassName = cn(
+        "bg-neutral-bg-subtle-default rounded-[16px] overflow-hidden grow",
+        panelClass
+    )
+
     const content = (
         <div
             {...props}
@@ -30,12 +35,8 @@ const LandingPanel: FC<LandingPanelBaseProps> = ({children, panelClass, tiltEnab
     )
 
     return (
-        <div
-            className={cn(
-                "rounded-[16px] overflow-hidden bg-neutral-bg-subtle-default grow",
-                panelClass
-            )}
-        >
+
+        <>
             {tiltEnable ? (
                 <Tilt
                     glareEnable={true}
@@ -43,12 +44,19 @@ const LandingPanel: FC<LandingPanelBaseProps> = ({children, panelClass, tiltEnab
                     glareColor={glareColor}
                     tiltMaxAngleX={7}
                     tiltMaxAngleY={7}
+                    className={panelClassName}
                 >
                     {content}
                 </Tilt>
-            ) : content}
+            ) : (
+                <div
+                    className={panelClassName}
+                >
+                    {content}
+                </div>
+            )}
+        </>
 
-        </div>
 
     );
 };
