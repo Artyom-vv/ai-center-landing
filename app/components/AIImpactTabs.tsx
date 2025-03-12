@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import ChipGroup from "@/app/components/ui/ChipGroup";
 import Chip from "@/app/components/ui/Chip";
 import Slider, {Slide} from "@/app/components/Slider";
+import {AnimatePresence, motion} from "framer-motion";
 
 const slides: {[k: string]: Slide[]} = {
     "1": [
@@ -38,7 +39,17 @@ const AIImpactTabs = () => {
                 <Chip value="4">Фитнес индустрия</Chip>
                 <Chip value="5">Медицина</Chip>
             </ChipGroup>
-            <Slider slides={slides[activeTab] || []}/>
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={activeTab} // Используем activeTab как ключ для анимации
+                    initial={{ opacity: 0, y: 20 }} // Начальное состояние (невидимо и смещено вниз)
+                    animate={{ opacity: 1, y: 0 }} // Анимация появления (плавное увеличение прозрачности и смещение вверх)
+                    exit={{ opacity: 0, y: -20 }} // Анимация исчезновения (плавное уменьшение прозрачности и смещение вверх)
+                    transition={{ duration: 0.2 }} // Длительность анимации
+                >
+                    <Slider slides={slides[activeTab] || []} />
+                </motion.div>
+            </AnimatePresence>
         </>
     );
 };
