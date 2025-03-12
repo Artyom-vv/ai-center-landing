@@ -13,15 +13,17 @@ export interface ButtonProps extends AriaButtonOptions<'button'>, HTMLButtonAria
     size?: "1x-large" | "large";
     variant?: "primary" | "secondary"
     leftIcon?: React.ReactNode;
+    onSubtle?: boolean
 }
 
+
 const buttonVariants = cva(
-    "transition duration-300 flex items-center justify-center gap-1x-small rounded-[8px] cursor-pointer border-thick border-solid border-transparent whitespace-nowrap",
+    "text-neutral-text-primary transition duration-300 flex items-center justify-center gap-1x-small rounded-[8px] border-thick border-solid border-transparent whitespace-nowrap",
     {
         variants: {
             intent: {
-                primary: "text-neutral-solid-white bg-brand-main-default hover:bg-brand-main-hover hover:border-brand-bg-hover",
-                secondary: "text-neutral-solid-white bg-brand-main-default hover:bg-brand-main-hover hover:border-brand-bg-hover",
+                primary: "bg-brand-main-default",
+                secondary:null,
             },
             size: {
                 "1x-large": "h-(--size-1x-large) text-body-large font-bold",
@@ -31,14 +33,83 @@ const buttonVariants = cva(
                 true: "cursor-not-allowed bg-neutral-bg-on-subtle-default"
             },
             pressed: {
-                true: "!bg-brand-main-active"
+                true: null,
+                false: null
             },
             icononly: {
+                true: null,
+                false: null
+            },
+            onsubtle: {
                 true: null,
                 false: null
             }
         },
         compoundVariants: [
+            {
+                intent: "secondary",
+                onsubtle: false,
+                pressed: true,
+                disabled: false,
+                className: "bg-neutral-bg-subtle-active"
+            },
+            {
+                intent: "secondary",
+                pressed: true,
+                onsubtle: true,
+                disabled: false,
+                className: "bg-neutral-bg-on-subtle-active"
+            },
+            {
+                intent: "secondary",
+                onsubtle: false,
+                pressed: false,
+                disabled: false,
+                className: "bg-neutral-bg-subtle-default"
+            },
+            {
+                intent: "secondary",
+                pressed: false,
+                onsubtle: true,
+                disabled: false,
+                className: "bg-neutral-bg-on-subtle-default"
+            },
+            {
+                intent: "primary",
+                disabled: false,
+                pressed: false,
+                className: "bg-brand-main-default"
+            },
+            {
+                intent: "primary",
+                disabled: false,
+                pressed: true,
+                className: "bg-brand-main-active"
+            },
+            {
+                intent: "primary",
+                pressed: false,
+                disabled: false,
+                className: "hover:bg-brand-main-hover hover:border-brand-bg-hover"
+            },
+            {
+                intent: "secondary",
+                onsubtle: false,
+                pressed: false,
+                disabled: false,
+                className: "hover:bg-neutral-bg-subtle-hover"
+            },
+            {
+                intent: "secondary",
+                onsubtle: true,
+                pressed: false,
+                disabled: false,
+                className: "hover:bg-neutral-bg-on-subtle-hover"
+            },
+            {
+                disabled: false,
+                className: "cursor-pointer"
+            },
             {
                 icononly: false,
                 className: "px-large"
@@ -55,15 +126,25 @@ const buttonVariants = cva(
             },
         ],
         defaultVariants: {
-            disabled: false,
+            onsubtle: false,
             pressed: false,
+            disabled: false,
             size: "1x-large",
             intent: "primary"
         },
     })
 
 
-const Button: FC<ButtonProps> = ({children, leftIcon, iconOnly = false, variant = 'primary', size = 'large', onPress, ...props}) => {
+const Button: FC<ButtonProps> = ({
+                                     children,
+                                     leftIcon,
+                                     onSubtle = false,
+                                     iconOnly = false,
+                                     variant = 'primary',
+                                     size = 'large',
+                                     onPress,
+                                     ...props
+                                 }) => {
 
     const ref = useRef<HTMLButtonElement>(null);
     const {isPressed, buttonProps} = useButton({
@@ -79,6 +160,7 @@ const Button: FC<ButtonProps> = ({children, leftIcon, iconOnly = false, variant 
             className={cn(
                 props.className,
                 buttonVariants({
+                    onsubtle: onSubtle,
                     size: size,
                     disabled: buttonProps.disabled,
                     pressed: isPressed,

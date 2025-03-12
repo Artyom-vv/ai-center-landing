@@ -40,13 +40,13 @@ const Slider: FC<SliderProps> = ({ slides }) => {
                         </div>
                     </div>
                     <div className="flex gap-1x-small">
-                        <Button iconOnly variant="secondary" onPress={prevSlide}><ArrowLeft/></Button>
-                        <Button iconOnly variant="secondary" onPress={nextSlide}><ArrowRight/></Button>
+                        <Button onSubtle iconOnly variant="secondary" onPress={prevSlide}><ArrowLeft/></Button>
+                        <Button onSubtle iconOnly variant="secondary" onPress={nextSlide}><ArrowRight/></Button>
                     </div>
                 </div>
             </div>
             <img
-                className="h-[480px] bg-neutral-bg-on-subtle-default rounded-[8px] grow object-cover"
+                className="h-[480px] bg-neutral-bg-on-subtle-default rounded-[8px] grow max-w-[800px] object-cover"
                 src={slides[currentIndex]?.src}
                 alt={slides[currentIndex]?.title}
             />
