@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from "@/app/components/Section";
 import Button from "@/app/components/ui/Button";
-import Telegram from '../../public/svg/telegram-2-fill.svg'
+import {RiTelegram2Fill} from "@remixicon/react";
 
 const FreeDemo = () => {
     return (
@@ -13,7 +13,7 @@ const FreeDemo = () => {
                         Напишите в Telegram и узнайте, <br/>кто на той стороне — человек или ИИ?
                     </p>
                 </div>
-                <Button className="bg-neutral-solid-white hover:bg-neutral-solid-white hover:border-transparent !text-brand-text-default" leftIcon={<Telegram/>}>Написать в Telegram</Button>
+                <Button className="bg-neutral-solid-white hover:bg-neutral-solid-white hover:border-transparent !text-brand-text-default" leftIcon={<RiTelegram2Fill size={16} color="var(--color-brand-text-default)"/>}>Написать в Telegram</Button>
             </div>
         </Section>
     );

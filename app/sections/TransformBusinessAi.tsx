@@ -4,9 +4,7 @@ import ChipGroup from "@/app/components/ui/ChipGroup";
 import Chip from "@/app/components/ui/Chip";
 import TiltedCards from "@/app/components/TiltedCards";
 import AdvantagePanel from "@/app/components/AdvantagePanel";
-import ChatAiLine from "../../public/svg/chat-ai-line.svg"
-import ChatSmileAiLine from "../../public/svg/chat-smile-ai-line.svg"
-import BarChatBoxAiLine from "../../public/svg/bar-chart-box-ai-line.svg"
+import {RiBarChartBoxAiLine, RiChatAiLine, RiChatSmileAiLine} from "@remixicon/react";
 
 const TransformBusinessAi = () => {
 
@@ -29,7 +27,7 @@ const TransformBusinessAi = () => {
                         - Повышают качество сервиса<br/>
                         - Легко интегрируются с CRM<br/>
                     </>}
-                    icon={<ChatAiLine/>}
+                    icon={<RiChatAiLine size={24} color="var(--color-neutral-text-heading)"/>}
                 />
                 <AdvantagePanel
                     title="Продвинутая анали﻿тика"
@@ -40,7 +38,7 @@ const TransformBusinessAi = () => {
                         - Предотвращают риски<br/>
                         Принимайте только обоснованные решения.<br/>
                     </>}
-                    icon={<ChatSmileAiLine/>}
+                    icon={<RiChatSmileAiLine size={24} color="var(--color-neutral-text-heading)"/>}
                 />
                 <AdvantagePanel
                     title="Продвинутая анали﻿тика"
@@ -51,7 +49,7 @@ const TransformBusinessAi = () => {
                         - Предотвращают риски<br/>
                         Принимайте только обоснованные решения.<br/>
                     </>}
-                    icon={<BarChatBoxAiLine/>}
+                    icon={<RiBarChartBoxAiLine size={24} color="var(--color-neutral-text-heading)"/>}
                 />
             </TiltedCards>
         </Section>

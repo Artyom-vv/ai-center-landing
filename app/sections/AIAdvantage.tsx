@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from "@/app/components/Section";
 import Button from "@/app/components/ui/Button";
-import Sparks from '../../public/svg/sparkling-2-fill.svg'
+import {RiSparkling2Fill} from "@remixicon/react";
 
 const AIAdvantage = () => {
     return (
@@ -11,7 +11,7 @@ const AIAdvantage = () => {
                     <h3>Будьте на шаг впереди конкурентов,</h3>
                     <div className="flex items-center space-x-small">
                         <h3 className="hero-text-gradient">работайте с ИИ уже сейчас</h3>
-                        <Sparks/>
+                        <RiSparkling2Fill size={32} color="var(--color-cyan-500)"/>
                     </div>
                 </div>
                 <Button>Оставить заявку</Button>
