@@ -13,10 +13,25 @@ const slides: {[k: string]: Slide[]} = {
         {src: "/stats/3.png", title: "Слайд 3", description: "Описание третьего слайда"},
     ],
     "2": [
-        {src: "/stats/1.png", title: "Слайд #1", description: "Описание #первого слайда"},
+        {src: "/stats/1.png", title: "Слайд ##1", description: "Описание #первого слайда"},
         {src: "/stats/2.png", title: "Слайд #2", description: "Описание #второго слайда"},
         {src: "/stats/3.png", title: "Слайд #3", description: "Описание #третьего слайда"},
-    ]
+    ],
+    "3": [
+        {src: "/stats/1.png", title: "Слайд ##1", description: "Описание #первого слайда"},
+        {src: "/stats/2.png", title: "Слайд ##2", description: "Описание #второго слайда"},
+        {src: "/stats/3.png", title: "Слайд ##3", description: "Описание #третьего слайда"},
+    ],
+    "4": [
+        {src: "/stats/1.png", title: "Слайд ###1", description: "Описание #первого слайда"},
+        {src: "/stats/2.png", title: "Слайд ###2", description: "Описание #второго слайда"},
+        {src: "/stats/3.png", title: "Слайд ###3", description: "Описание #третьего слайда"},
+    ],
+    "5": [
+        {src: "/stats/1.png", title: "Слайд $$#1", description: "Описание #первого слайда"},
+        {src: "/stats/2.png", title: "Слайд $$#2", description: "Описание #второго слайда"},
+        {src: "/stats/3.png", title: "Слайд $$#3", description: "Описание #третьего слайда"},
+    ],
 }
 
 
