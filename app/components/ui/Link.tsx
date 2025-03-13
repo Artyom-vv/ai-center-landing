@@ -12,24 +12,66 @@ export interface LinkProps extends Omit<AriaButtonOptions<'button'>, 'href'>, HT
     href: string;
     children?: ReactNode;
     size?: "large";
+    variant?: "text" | "link"
+    nowrap?: boolean;
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
 }
 
 const linkVariants = cva(
-    "transition duration-300 flex items-center gap-1x-small cursor-pointer whitespace-nowrap text-brand-main-default hover:text-brand-main-hover border-none bg-transparent",
+    "transition duration-300 flex items-start gap-1x-small border-none bg-transparent text-left p-[0]",
     {
         variants: {
+            nowrap: {
+                true: 'whitespace-nowrap',
+                false: null
+            },
+            intent: {
+                link: null,
+                text: null,
+            },
             size: {
                 "large": "text-body-big"
             },
             disabled: {
-                true: "cursor-not-allowed"
+                true: null,
+                false: "cursor-pointer "
             },
             pressed: {
-                true: "!text-brand-main-active"
+                true: null,
+                false: null
             }
         },
+        compoundVariants: [
+            {
+                disabled: true,
+                className: "text-neutral-text-quaternary"
+            },
+            {
+                intent: "link",
+                pressed: true,
+                disabled: false,
+                className: "text-brand-main-active"
+            },
+            {
+                intent: "link",
+                pressed: false,
+                disabled: false,
+                className: "text-brand-main-default hover:text-brand-main-hover"
+            },
+            {
+                intent: "text",
+                pressed: true,
+                disabled: false,
+                className: "text-neutral-text-heading"
+            },
+            {
+                intent: "text",
+                pressed: false,
+                disabled: false,
+                className: "text-neutral-text-primary hover:text-neutral-text-secondary"
+            },
+        ],
         defaultVariants: {
             disabled: false,
             pressed: false,
@@ -37,7 +79,7 @@ const linkVariants = cva(
         },
     })
 
-const Link: FC<LinkProps> = ({children, size, isDisabled, leftIcon, rightIcon, ...props}) => {
+const Link: FC<LinkProps> = ({children, size, isDisabled, leftIcon, nowrap = true, variant = "link", rightIcon, ...props}) => {
 
     const ref = useRef<HTMLButtonElement>(null);
     const {isPressed, buttonProps} = useButton({
@@ -58,14 +100,24 @@ const Link: FC<LinkProps> = ({children, size, isDisabled, leftIcon, rightIcon, .
                 className={cn(
                     linkVariants({
                         size,
+                        nowrap,
+                        intent: variant,
                         disabled: isDisabled,
                         pressed: isPressed,
                     }), props.className
                 )}
             >
-                {leftIcon}
+                {leftIcon && (
+                    <div className="py-[6px]">
+                        {leftIcon}
+                    </div>
+                )}
                 {children}
-                {rightIcon}
+                {rightIcon && (
+                    <div className="py-[6px]">
+                        {rightIcon}
+                    </div>
+                )}
             </button>
         </NextLink>
 

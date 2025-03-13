@@ -8,6 +8,9 @@ import AIAdvantage from "@/app/sections/AIAdvantage";
 import CustomAndUniqueSolutions from "@/app/sections/CustomAndUniqueSolutions";
 import AIIntegrationInfo from "@/app/sections/AIIntegrationInfo";
 import BusinessSteps from "@/app/sections/BusinessSteps";
+import PricingPlans from "@/app/sections/PricingPlans";
+import FreeDemo from "@/app/sections/FreeDemo";
+import Footer from "@/app/sections/Footer";
 
 export default function Home() {
   return (
@@ -22,6 +25,9 @@ export default function Home() {
           <CustomAndUniqueSolutions/>
           <AIIntegrationInfo/>
           <BusinessSteps/>
+          <PricingPlans/>
+          <FreeDemo/>
+          <Footer/>
       </div>
   );
 }

@@ -23,7 +23,7 @@ const buttonVariants = cva(
         variants: {
             intent: {
                 primary: "bg-brand-main-default",
-                secondary:null,
+                secondary: null,
             },
             size: {
                 "1x-large": "h-(--size-1x-large) text-body-large font-bold",

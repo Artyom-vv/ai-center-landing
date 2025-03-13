@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@remixicon/react": "^4.6.0",
     "@svgr/webpack": "^8.1.0",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",

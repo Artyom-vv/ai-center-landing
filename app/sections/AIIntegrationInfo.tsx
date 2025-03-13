@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from "@/app/components/Section";
 import NewsPanel from "@/app/components/NewsPanel";
+import FadeIn from "@/app/components/FadeIn";
 
 const AIIntegrationInfo = () => {
     return (
@@ -14,26 +15,28 @@ const AIIntegrationInfo = () => {
                 для повышения эффективности предприятий!
             </>}
         >
-            <div className="flex gap-normal">
-                <NewsPanel
-                    title="Заголовок новости"
-                    description="15 января"
-                    link="https://web.telegram.org"
-                    linkLabel="Перейти в Telegram"
-                />
-                <NewsPanel
-                    title="Заголовок новости"
-                    description="15 января"
-                    link="https://web.telegram.org"
-                    linkLabel="Перейти в Telegram"
-                />
-                <NewsPanel
-                    title="Заголовок новости"
-                    description="15 января"
-                    link="https://web.telegram.org"
-                    linkLabel="Перейти в Telegram"
-                />
-            </div>
+            <FadeIn>
+                <div className="flex gap-normal">
+                    <NewsPanel
+                        title="Заголовок новости"
+                        description="15 января"
+                        link="https://web.telegram.org"
+                        linkLabel="Перейти в Telegram"
+                    />
+                    <NewsPanel
+                        title="Заголовок новости"
+                        description="15 января"
+                        link="https://web.telegram.org"
+                        linkLabel="Перейти в Telegram"
+                    />
+                    <NewsPanel
+                        title="Заголовок новости"
+                        description="15 января"
+                        link="https://web.telegram.org"
+                        linkLabel="Перейти в Telegram"
+                    />
+                </div>
+            </FadeIn>
         </Section>
     );
 };

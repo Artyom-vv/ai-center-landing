@@ -57,7 +57,7 @@
     --color-neutral-text-primary: var(--color-gradation-100);
     --color-neutral-text-secondary: var(--color-gradation-200);
     --color-neutral-text-tertiary: var(--color-gradation-300);
-    --color-neutral-text-disabled: var(--color-gradation-400);
+    --color-neutral-text-quaternary: var(--color-gradation-400);
 
     --color-neutral-bg-subtle-default: var(--color-gradation-950);
     --color-neutral-bg-subtle-hover: var(--color-gradation-850);
@@ -114,16 +114,13 @@
 
 html[data-theme=bright] {
   /* Neutral Colors */
-  --color-neutral-solid-white: var(--color-black);
-  --color-neutral-solid-black: var(--color-white);
-
   --color-neutral-bg-surface: var(--color-neutral-solid-white);
 
   --color-neutral-text-heading: var(--color-gradation-950);
   --color-neutral-text-primary: var(--color-gradation-800);
   --color-neutral-text-secondary: var(--color-gradation-600);
   --color-neutral-text-tertiary: var(--color-gradation-400);
-  --color-neutral-text-disabled: var(--color-gradation-300);
+  --color-neutral-text-quaternary: var(--color-gradation-300);
 
   --color-neutral-bg-subtle-default: var(--color-gradation-50);
   --color-neutral-bg-subtle-hover: var(--color-gradation-100);

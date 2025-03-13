@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body
-        className={`${manropeSans.variable} antialiased`}
+        className={`${manropeSans.variable} antialiased bg-neutral-bg-surface`}
       >
         {children}
       </body>

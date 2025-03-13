@@ -18,7 +18,7 @@ export interface LandingPanelBaseProps extends HTMLProps<HTMLDivElement> {
 const LandingPanel: FC<LandingPanelBaseProps> = ({children, panelClass, tiltEnable = true, glareColor = "var(--color-neutral-bg-subtle-hover)", ...props}) => {
 
     const panelClassName = cn(
-        "bg-neutral-bg-subtle-default rounded-[16px] overflow-hidden grow",
+        "bg-neutral-bg-subtle-default rounded-[16px] overflow-hidden basis-[0] grow",
         panelClass
     )
 
