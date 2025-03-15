@@ -8,7 +8,8 @@ import {AnimatePresence, motion} from "framer-motion";
 
 const slides: {[k: string]: Slide[]} = {
     "1": [
-        {src: "/stats/1.png", title: "Слайд 1", description: "Описание первого слайда"},
+        {src: "/stats/1.png", title: "B2C ритейл-сектор: \n" +
+                "магазины одежды, электроники, товаров", description: "Ключевые результаты: увеличение продаж, повышение лояльности клиентов и снижение операционных затрат"},
         {src: "/stats/2.png", title: "Слайд 2", description: "Описание второго слайда"},
         {src: "/stats/3.png", title: "Слайд 3", description: "Описание третьего слайда"},
     ],

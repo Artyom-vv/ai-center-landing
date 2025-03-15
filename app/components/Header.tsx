@@ -5,7 +5,7 @@ import MailAiLine from "../../public/svg/mail-ai-line.svg"
 const Header = () => {
 
     return (
-        <header className="py-normal w-full">
+        <header className="py-normal w-full relative z-20">
             <div className="container grid grid-cols-12 gap-4 items-center">
                 <div className="col-span-3">
                     <a className="text-neutral-text-heading select-none text-body-big font-medium no-underline cursor-pointer">Центр

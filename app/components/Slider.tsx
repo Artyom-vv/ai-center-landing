@@ -61,6 +61,7 @@ const Slider: FC<SliderProps> = ({ slides }) => {
                         animate="visible"
                         exit="exit"
                         variants={textAnimation}
+                        className="space-y-normal"
                     >
                         <h5 className="text-2xl font-bold">{slides[currentIndex]?.title}</h5>
                         <p className="text-body-big text-neutral-text-secondary">

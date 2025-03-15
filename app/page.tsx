@@ -11,23 +11,24 @@ import BusinessSteps from "@/app/sections/BusinessSteps";
 import PricingPlans from "@/app/sections/PricingPlans";
 import FreeDemo from "@/app/sections/FreeDemo";
 import Footer from "@/app/sections/Footer";
+import React from "react";
 
 export default function Home() {
-  return (
-      <div className="wrapper overflow-x-hidden flex flex-col">
-          <Hero/>
-          <TransformBusinessAi/>
-          <AIImpact/>
-          <StartAITTransformation/>
-          <CustomSolutions/>
-          <PopularSolutions/>
-          <AIAdvantage/>
-          <CustomAndUniqueSolutions/>
-          <AIIntegrationInfo/>
-          <BusinessSteps/>
-          <PricingPlans/>
-          <FreeDemo/>
-          <Footer/>
-      </div>
-  );
+    return (
+        <div className="wrapper overflow-x-hidden flex flex-col">
+            <Hero/>
+            <TransformBusinessAi/>
+            <AIImpact/>
+            <StartAITTransformation/>
+            <CustomSolutions/>
+            <PopularSolutions/>
+            <AIAdvantage/>
+            <CustomAndUniqueSolutions/>
+            <AIIntegrationInfo/>
+            <BusinessSteps/>
+            <PricingPlans/>
+            <FreeDemo/>
+            <Footer/>
+        </div>
+    );
 }

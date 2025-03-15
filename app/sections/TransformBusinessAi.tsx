@@ -5,13 +5,17 @@ import Chip from "@/app/components/ui/Chip";
 import TiltedCards from "@/app/components/TiltedCards";
 import AdvantagePanel from "@/app/components/AdvantagePanel";
 import {RiBarChartBoxAiLine, RiChatAiLine, RiChatSmileAiLine} from "@remixicon/react";
+import RotatingCircle from "@/app/components/RotatingCircle";
 
 const TransformBusinessAi = () => {
 
     return (
         <Section
-            title="Трансформируйте бизнес
-            с ИИ">
+            className="z-[21]"
+            containerClass="relative"
+            title="Трансформируйте бизнес с ИИ"
+            beforeContent={<RotatingCircle className="size-[402px] absolute -left-[120px] -top-[80px]"/>}
+        >w
             <ChipGroup className="self-center">
                 <Chip isDisabled={true}>Повысьте эффективность</Chip>
                 <Chip isDisabled={true}>Ускорьте процессы</Chip>

@@ -38,13 +38,13 @@ const Footer = () => {
                 <div className="grid grid-cols-12 gap-normal">
                     <div className="flex col-start-4 col-span-6 gap-normal">
                         <div className="flex gap-[12px] basis-0 grow shrink-0">
-                            <Sponcor1 className="mx-[3px]"/>
+                            <Sponcor1 className="mx-[3px] size-[48px]"/>
                             <p className="text-body-normal text-neutral-text-quaternary">Компания включена в реестр
                                 <br/>Минцифры России</p>
                         </div>
                         <div className="h-full w-[1px] bg-neutral-border-on-subtle-default"></div>
                         <div className="flex gap-[12px] basis-0 grow shrink-0">
-                            <Sponcor2 className="mx-[8px]"/>
+                            <Sponcor2 className="mx-[8px] w-[32px] h-[48px]"/>
                             <p className="text-body-normal text-neutral-text-quaternary">Компания включена в
                                 реестр <br/>
                                 стартапов Республики Татарстан</p>
