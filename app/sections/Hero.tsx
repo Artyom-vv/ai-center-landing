@@ -17,7 +17,7 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className="container p-[0] absolute left-1/2 top-[0] -translate-x-1/2 flex justify-center">
-                    <Shape/>
+                    <Shape className="w-[1440px] h-[800px]"/>
                     <div
                         style={{background: "linear-gradient(180deg, #000000 50%, rgba(0, 0, 0, 0) 100%)"}}
                         className="h-[160px] absolute top-[0] left-[0] w-full -translate-y-1/2 z-50"></div>
