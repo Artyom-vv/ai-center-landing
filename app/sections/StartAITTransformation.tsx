@@ -3,10 +3,13 @@ import Section from "@/app/components/Section";
 import StatsPanel from "@/app/components/StatsPanel";
 import TiltedCards from "@/app/components/TiltedCards";
 import Button from "@/app/components/ui/Button";
+import RotatingCircle from "@/app/components/RotatingCircle";
 
 const StartAitTransformation = () => {
     return (
-        <Section title=" Приступите к ИИ-трансформации уже сегодня! ">
+        <Section
+            beforeContent={<RotatingCircle className="size-[432px] absolute -right-[176px] -bottom-[477px]"/>}
+            title=" Приступите к ИИ-трансформации уже сегодня! ">
             <TiltedCards>
                 <StatsPanel
                     title="Интерактивные чат-робо﻿ты"
