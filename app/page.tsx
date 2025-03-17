@@ -12,10 +12,12 @@ import PricingPlans from "@/app/sections/PricingPlans";
 import FreeDemo from "@/app/sections/FreeDemo";
 import Footer from "@/app/sections/Footer";
 import React from "react";
+import ClientLogic from "@/app/components/ClientLogic";
 
 export default function Home() {
     return (
-        <div className="wrapper overflow-x-hidden flex flex-col">
+        <div id="app" className="wrapper overflow-x-hidden flex flex-col">
+            <ClientLogic/>
             <Hero/>
             <TransformBusinessAi/>
             <AIImpact/>

@@ -27,11 +27,11 @@ const TiltedCards: FC<TiltedCardsProps> = ({ children }) => {
                     }}
                     viewport={{ once: true }} // Анимация только один раз
                     transition={{
-                        duration: 0.6,
+                        duration: 0.8,
                         ease: 'easeInOut',
                     }}
                     className={cn(
-                        'transition-transform grow',
+                        'transition-transform basis-[0] grow',
                         {
                             'pt-[5px]': index === 0 || index === children.length - 1,
                             'pr-[6px]': index === 0,

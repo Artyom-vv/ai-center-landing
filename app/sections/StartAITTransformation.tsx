@@ -8,40 +8,22 @@ import RotatingCircle from "@/app/components/RotatingCircle";
 const StartAitTransformation = () => {
     return (
         <Section
-            beforeContent={<RotatingCircle className="size-[432px] absolute -right-[176px] -bottom-[477px]"/>}
+            beforeContent={<RotatingCircle className="size-[552px] absolute -right-[268px] -bottom-[534px]"/>}
             title=" Приступите к ИИ-трансформации уже сегодня! ">
             <TiltedCards>
                 <StatsPanel
-                    title="Интерактивные чат-робо﻿ты"
-                    description={<>
-                        - Работают 24/7<br/>
-                        - Автоматизируют общение с клиентами<br/>
-                        - Ускоряют обработку запросов<br/>
-                        - Повышают качество сервиса<br/>
-                        - Легко интегрируются с CRM<br/>
-                    </>}
+                    title="Более 5%"
+                    description="Рост прибыли при внедрении ИИ в производственный процесс"
                     src="/stats/1.png"
                 />
                 <StatsPanel
-                    title="Продвинутая анали﻿тика"
-                    description={<>
-                        ИИ-инструменты для аналитики:<br/>
-                        - Анализируют большие объемы данных<br/>
-                        - Выявляют возможности для роста<br/>
-                        - Предотвращают риски<br/>
-                        Принимайте только обоснованные решения.<br/>
-                    </>}
+                    title="На 60%"
+                    description="Возможно снизить издержки на ключевых бизнес-процессах"
                     src="/stats/2.png"
                 />
                 <StatsPanel
-                    title="Продвинутая анали﻿тика"
-                    description={<>
-                        ИИ-инструменты для аналитики:<br/>
-                        - Анализируют большие объемы данных<br/>
-                        - Выявляют возможности для роста<br/>
-                        - Предотвращают риски<br/>
-                        Принимайте только обоснованные решения.<br/>
-                    </>}
+                    title="Менее 3%"
+                    description="Компаний на рынке эффективно используют ИИ для решения актуальных бизнес-задач"
                     src="/stats/3.png"
                 />
             </TiltedCards>

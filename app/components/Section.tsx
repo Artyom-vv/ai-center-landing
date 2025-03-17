@@ -2,7 +2,6 @@
 
 import React, {FC, HTMLProps, ReactNode, useEffect, useRef, useState} from 'react';
 import cn from "classnames";
-import {useBreakpoint} from "@/app/hooks/useBreakpoint";
 
 export interface SectionProps extends Omit<HTMLProps<HTMLDivElement>, "title"> {
     title?: ReactNode | string;
@@ -14,34 +13,21 @@ export interface SectionProps extends Omit<HTMLProps<HTMLDivElement>, "title"> {
 
 const Section: FC<SectionProps> = ({title, subtitle, containerClass, beforeContent, children, ...props}) => {
 
-    const breakpoint = useBreakpoint();
     const containerRef = useRef<HTMLDivElement>(null);
     const [tintSize, setTintSize] = useState(0)
+
+    const getRemainsSpace = () => {
+        if (containerRef.current) {
+            return (document.documentElement.offsetWidth - containerRef.current.offsetWidth) / 2;
+        }
+        return 0
+    }
 
     useEffect(() => {
         const value = getRemainsSpace();
         setTintSize(value);
         console.log(value)
     }, [containerRef])
-
-    const getRemainsSpace = () => {
-        console.log('breakpoint', breakpoint)
-        let dif = 0;
-        switch (breakpoint) {
-            case 'xl':
-            case 'md':
-            case 'sm':
-                dif = 172;
-                break;
-            default:
-                break;
-        }
-
-        if (containerRef.current) {
-            return ((document.documentElement.offsetWidth - containerRef.current.offsetWidth) / 2) + dif;
-        }
-        return 0
-    }
 
     return (
         <section
@@ -57,13 +43,13 @@ const Section: FC<SectionProps> = ({title, subtitle, containerClass, beforeConte
                     background: "linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%)",
                     width: tintSize + 'px',
                 }}
-                className="min-w-[172px] h-full absolute bottom-[0] left-[0] z-10"></div>
+                className="w-[172px] h-full absolute bottom-[0] left-[0] z-10"></div>
             <div
                 style={{
                     background: "linear-gradient(-90deg, #000000 0%, rgba(0, 0, 0, 0) 100%)",
                     width: tintSize + 'px',
                 }}
-                className="min-w-[172px] h-full absolute bottom-[0] right-[0] z-10"></div>
+                className="w-[172px] h-full absolute bottom-[0] right-[0] z-10"></div>
 
 
             <div ref={containerRef} className={cn(

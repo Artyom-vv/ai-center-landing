@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "@/app/components/Header";
 import Button from "@/app/components/ui/Button";
 import Shape from '../../public/svg/hero-shape.svg'
+import FadeIn from "@/app/components/FadeIn";
 
 const Hero = () => {
     return (
@@ -13,11 +14,13 @@ const Hero = () => {
                         <h3>Автоматизируйте бизнес <br/>с ИИ и сократите затраты</h3>
                         <h3 className="hero-text-gradient">до 60% за 30 дней</h3>
                         <p className="text-body-large mt-large">Мы предлагаем решения, которые быстро окупаются</p>
-                        <Button size="1x-large" className="mt-3x-large">Получить бесплатный аудит</Button>
+                        <FadeIn duration={0.4}>
+                            <Button size="1x-large" className="mt-3x-large">Получить бесплатный аудит</Button>
+                        </FadeIn>
                     </div>
                 </div>
-                <div className="container p-[0] absolute left-1/2 top-[0] -translate-x-1/2 flex justify-center">
-                    <Shape className="w-[1440px] h-[800px]"/>
+                <div className="container p-[0] absolute left-1/2 top-[0] -translate-x-1/2 flex justify-center h-full overflow-hidden">
+                    <Shape className="w-[1440px] h-[800px] absolute left-1/2 top-[0] -translate-x-1/2 z-10"/>
                     <div
                         style={{background: "linear-gradient(180deg, #000000 50%, rgba(0, 0, 0, 0) 100%)"}}
                         className="h-[160px] absolute top-[0] left-[0] w-full -translate-y-1/2 z-50"></div>

@@ -2,13 +2,18 @@ import React from 'react';
 import Section from "@/app/components/Section";
 import PersonPanel from "@/app/components/PersonPanel";
 import AnimatedCards from "@/app/components/AnimatedCards";
+import RotatingCircle from "@/app/components/RotatingCircle";
 
 const CustomAndUniqueSolutions = () => {
     return (
-        <Section title="А также - нестандартные решения" subtitle={<>
-            Интересные решения по автоматизации с помощью ИИ,<br/>
-            которые мы сможем реализовать
-        </>}>
+        <Section
+            beforeContent={<RotatingCircle className="size-[570px] absolute -right-[180px] -bottom-[310px]"/>}
+            title="А также - нестандартные решения"
+            subtitle={<>
+                Интересные решения по автоматизации с помощью ИИ,<br/>
+                которые мы сможем реализовать
+            </>}
+        >
             <AnimatedCards
                 reverse={true}
                 firstRowCards={(

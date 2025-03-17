@@ -3,14 +3,18 @@ import Section from "@/app/components/Section";
 import AdvantagePanel from "@/app/components/AdvantagePanel";
 import FadeIn from "@/app/components/FadeIn";
 import {RiCodeAiFill, RiPuzzle2Line, RiSeoLine, RiShakeHandsLine} from "@remixicon/react";
+import RotatingCircle from "@/app/components/RotatingCircle";
 
 const CustomSolutions = () => {
     return (
-        <Section title={(
-            <>
-                Индивидуальные решения, <br/>которые работают на результат!
-            </>
-        )}>
+        <Section
+            title={(
+                <>
+                    Индивидуальные решения, <br/>которые работают на результат!
+                </>
+            )}
+            beforeContent={<RotatingCircle className="size-[520px] absolute -left-[80px] -bottom-[396px]"/>}
+        >
             <FadeIn>
                 <div className="grid grid-cols-2 auto-rows-fr gap-[16px] h-[608px]">
                     <AdvantagePanel

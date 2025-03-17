@@ -3,6 +3,7 @@ import Section from "@/app/components/Section";
 import PricePanel, {formatPrice} from "@/app/components/PricePanel";
 import {RiGitPullRequestLine, RiSparkling2Line, RiSpeedUpFill} from "@remixicon/react";
 import FadeIn from "@/app/components/FadeIn";
+import RotatingCircle from "@/app/components/RotatingCircle";
 
 const PricingPlans = () => {
     return (
@@ -14,7 +15,9 @@ const PricingPlans = () => {
                     Разрабатываем и внедряем искусственный интеллект <br/>для оптимизации процессов и открытия новых
                     возможностей роста
                 </>
-            )}>
+            )}
+            beforeContent={<RotatingCircle className="size-[620px] absolute -left-[120px] -bottom-[551px]"/>}
+        >
             <FadeIn>
                 <div className="flex gap-normal">
                     <PricePanel

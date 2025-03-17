@@ -8,9 +8,9 @@ export interface StatsPanelProps extends LandingPanelProps {
 
 const StatsPanel: FC<StatsPanelProps> = ({title, description, src, ...props}) => {
     return (
-        <LandingPanel {...props} className={cn(
+        <LandingPanel {...props} panelClass={cn(
             props.className,
-            "h-[452px]"
+            "h-[512px]"
         )}>
             <h5>{title}</h5>
             <p className="text-body-big text-neutral-text-secondary">{description}</p>

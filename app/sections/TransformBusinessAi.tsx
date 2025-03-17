@@ -15,7 +15,7 @@ const TransformBusinessAi = () => {
             containerClass="relative"
             title="Трансформируйте бизнес с ИИ"
             beforeContent={<RotatingCircle className="size-[402px] absolute -left-[120px] -top-[80px]"/>}
-        >w
+        >
             <ChipGroup className="self-center">
                 <Chip isDisabled={true}>Повысьте эффективность</Chip>
                 <Chip isDisabled={true}>Ускорьте процессы</Chip>
