@@ -16,7 +16,7 @@ const NewsPanel: FC<NewsPanelProps> = ({title, description, link, linkLabel, ...
             className={cn(
                 props.className
             )}
-            panelClass="!bg-neutral-bg-on-subtle-default h-[464px]"
+            panelClass="!bg-neutral-bg-on-subtle-default h-[464px] basis-[416px]"
             glareColor="var(--color-neutral-bg-on-subtle-hover)"
         >
             <div className="mt-auto space-y-small">

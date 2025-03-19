@@ -16,7 +16,7 @@ const PricePanel: FC<PricePanelProps> = ({title, description, sale, price, icon,
     return (
         <LandingPanel {...props} panelClass={cn(
             props.className,
-            "h-[512px]"
+            "h-[512px] basis-[416px]"
         )}>
             <div className="flex flex-col gap-[32px]">
                 <div

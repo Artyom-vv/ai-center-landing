@@ -9,12 +9,12 @@ export interface StatsPanelProps extends LandingPanelProps {
 const StatsPanel: FC<StatsPanelProps> = ({title, description, src, ...props}) => {
     return (
         <LandingPanel {...props} panelClass={cn(
+            "h-[512px]",
             props.className,
-            "h-[512px]"
         )}>
             <h5>{title}</h5>
             <p className="text-body-big text-neutral-text-secondary">{description}</p>
-            <img className="mt-auto object-cover w-full rounded-[8px] h-[198px] overflow-hidden" src={src} alt={title}/>
+            <img className="mt-auto object-cover w-full rounded-[8px] xl:h-[198px] h-[320px] overflow-hidden" src={src} alt={title}/>
         </LandingPanel>
     );
 };

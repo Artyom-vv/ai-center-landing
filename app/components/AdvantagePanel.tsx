@@ -9,8 +9,8 @@ export interface AdvantagePanelProps extends LandingPanelProps {
 const AdvantagePanel: FC<AdvantagePanelProps> = ({title, description, icon, ...props}) => {
     return (
         <LandingPanel {...props} panelClass={cn(
+            "h-[512px] basis-[416px]",
             props.className,
-            "h-[512px]"
         )}>
             <div className="size-1x-large rounded-[8px] flex items-center justify-center bg-neutral-bg-on-subtle-default mb-auto">
                 {icon}

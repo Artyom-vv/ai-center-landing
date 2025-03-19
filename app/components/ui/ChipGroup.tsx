@@ -22,7 +22,7 @@ const ChipGroup: FC<ChipGroupProps> = ({children, defaultValue, onChange, ...pro
 
     return (
         <div {...props} className={cn(
-            "flex gap-normal flex-wrap",
+            "flex gap-normal flex-wrap justify-center",
             props.className
         )}>
             {React.Children.map(children, (child) =>

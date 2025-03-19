@@ -11,7 +11,7 @@ const PersonPanel: FC<PersonPanelProps> = ({title, src, ...props}) => {
         <LandingPanel
             {...props}
             tiltEnable={false}
-            panelClass={cn("size-[328px] shrink-0")}
+            panelClass={cn("xl:size-[328px] size-[308px] shrink-0")}
             className={cn(
                 props.className,
                 "relative text-center"

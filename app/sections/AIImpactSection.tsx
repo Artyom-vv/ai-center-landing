@@ -12,7 +12,9 @@ const AiImpactSection = () => {
                 <RotatingCircle className="size-[690px] absolute -right-[400px] -top-[294px]"/>
                 <RotatingCircle className="size-[134px] absolute left-[230px] -bottom-[172px]"/>
             </>}
-            title="Узнайте как ИИ трансформирует ваш бизнес!">
+            title={<>
+                Узнайте как ИИ трансформирует <br className="xl:hidden block"/> ваш бизнес!
+            </>}>
             <AIImpactTabs/>
         </Section>
     );

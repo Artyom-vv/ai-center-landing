@@ -14,6 +14,7 @@ export interface ButtonProps extends AriaButtonOptions<'button'>, HTMLButtonAria
     variant?: "primary" | "secondary"
     leftIcon?: React.ReactNode;
     onSubtle?: boolean
+    round?: boolean
 }
 
 
@@ -26,8 +27,8 @@ const buttonVariants = cva(
                 secondary: null,
             },
             size: {
-                "1x-large": "h-(--size-1x-large) text-body-large font-bold",
-                "large": "h-(--size-large) text-body-large font-bold"
+                "1x-large": "h-(--size-1x-large) md:text-body-large text-body-big font-bold",
+                "large": "h-(--size-large) md:text-body-large text-body-big font-bold"
             },
             disabled: {
                 true: "cursor-not-allowed bg-neutral-bg-on-subtle-default"
@@ -43,9 +44,17 @@ const buttonVariants = cva(
             onsubtle: {
                 true: null,
                 false: null
+            },
+            round: {
+                true: null,
+                false: null
             }
         },
         compoundVariants: [
+            {
+                round: true,
+                className: "rounded-full"
+            },
             {
                 intent: "secondary",
                 onsubtle: false,
@@ -137,6 +146,7 @@ const buttonVariants = cva(
 
 const Button: FC<ButtonProps> = ({
                                      children,
+                                     round = false,
                                      leftIcon,
                                      onSubtle = false,
                                      iconOnly = false,
@@ -165,7 +175,8 @@ const Button: FC<ButtonProps> = ({
                     disabled: buttonProps.disabled,
                     pressed: isPressed,
                     intent: variant,
-                    icononly: iconOnly
+                    icononly: iconOnly,
+                    round
                 })
             )}
         >

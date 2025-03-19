@@ -7,11 +7,13 @@ export interface SectionProps extends Omit<HTMLProps<HTMLDivElement>, "title"> {
     title?: ReactNode | string;
     subtitle?: ReactNode | string;
     containerClass?: string
+    contentClass?: string
     className?: string,
     beforeContent?: ReactNode;
+    afterContainer?: ReactNode;
 }
 
-const Section: FC<SectionProps> = ({title, subtitle, containerClass, beforeContent, children, ...props}) => {
+const Section: FC<SectionProps> = ({title, subtitle, containerClass, beforeContent, contentClass , children, afterContainer, ...props}) => {
 
     const containerRef = useRef<HTMLDivElement>(null);
     const [tintSize, setTintSize] = useState(0)
@@ -43,13 +45,13 @@ const Section: FC<SectionProps> = ({title, subtitle, containerClass, beforeConte
                     background: "linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%)",
                     width: tintSize + 'px',
                 }}
-                className="w-[172px] h-full absolute bottom-[0] left-[0] z-10"></div>
+                className="min-w-[172px] h-full absolute bottom-[0] left-[0] z-10"></div>
             <div
                 style={{
                     background: "linear-gradient(-90deg, #000000 0%, rgba(0, 0, 0, 0) 100%)",
                     width: tintSize + 'px',
                 }}
-                className="w-[172px] h-full absolute bottom-[0] right-[0] z-10"></div>
+                className="min-w-[172px] h-full absolute bottom-[0] right-[0] z-10"></div>
 
 
             <div ref={containerRef} className={cn(
@@ -57,7 +59,10 @@ const Section: FC<SectionProps> = ({title, subtitle, containerClass, beforeConte
                 containerClass
             )}>
                 {beforeContent}
-                <div className="content space-y-1x-large flex flex-col relative z-20">
+                <div className={cn(
+                    "content space-y-1x-large flex flex-col relative z-20",
+                    contentClass
+                )}>
                     <div className="flex flex-col items-center space-y-normal text-center">
                         {title && (
                             <h4>{title}</h4>
@@ -71,6 +76,7 @@ const Section: FC<SectionProps> = ({title, subtitle, containerClass, beforeConte
                     {children}
                 </div>
             </div>
+            {afterContainer}
         </section>
     );
 };
