@@ -79,7 +79,7 @@ const linkVariants = cva(
         },
     })
 
-const Link: FC<LinkProps> = ({children, size, isDisabled, leftIcon, nowrap = true, variant = "link", rightIcon, ...props}) => {
+const Link: FC<LinkProps> = ({children, size, isDisabled, leftIcon, nowrap = true, variant = "link", rightIcon, target, href, ...props}) => {
 
     const ref = useRef<HTMLButtonElement>(null);
     const {isPressed, buttonProps} = useButton({
@@ -90,8 +90,8 @@ const Link: FC<LinkProps> = ({children, size, isDisabled, leftIcon, nowrap = tru
     return (
         <NextLink
             className="no-underline"
-            target={props.target}
-            href={props.href}
+            target={target}
+            href={href}
         >
             <button
                 ref={ref}

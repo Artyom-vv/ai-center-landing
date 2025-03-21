@@ -10,7 +10,7 @@ const Hero = () => {
         <>
             <Header/>
             <section className="xl:h-[800px] md:h-[1024px] relative z-10">
-                <div className="container flex justify-center items-center h-full relative z-[1]">
+                <div className="container flex justify-center items-center h-full relative z-50">
                     <div className="flex flex-col text-center items-center">
                         <h3>Автоматизируйте бизнес <br/>с ИИ и сократите затраты</h3>
                         <h3 className="hero-text-gradient">до 60% за 30 дней</h3>

@@ -14,10 +14,13 @@ export const formatPrice = (price: number): string => {
 
 const PricePanel: FC<PricePanelProps> = ({title, description, sale, price, icon, ...props}) => {
     return (
-        <LandingPanel {...props} panelClass={cn(
-            props.className,
-            "h-[512px] basis-[416px]"
-        )}>
+        <LandingPanel
+            {...props}
+            className="xl:space-y-normal md:space-y-1x-large max-md:space-y-large"
+            panelClass={cn(
+                props.className,
+                "xl:h-[512px] xl:basis-[416px]"
+            )}>
             <div className="flex flex-col gap-[32px]">
                 <div
                     className="size-1x-large rounded-[8px] flex items-center justify-center bg-neutral-bg-on-subtle-default mb-auto">

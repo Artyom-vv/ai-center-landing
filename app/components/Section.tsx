@@ -28,7 +28,6 @@ const Section: FC<SectionProps> = ({title, subtitle, containerClass, beforeConte
     useEffect(() => {
         const value = getRemainsSpace();
         setTintSize(value);
-        console.log(value)
     }, [containerRef])
 
     return (
@@ -68,7 +67,7 @@ const Section: FC<SectionProps> = ({title, subtitle, containerClass, beforeConte
                             <h4>{title}</h4>
                         )}
                         {subtitle && (
-                            <p className="text-body-large text-neutral-text-secondary">
+                            <p className="xl:text-body-large text-body-big text-neutral-text-secondary">
                                 {subtitle}
                             </p>
                         )}

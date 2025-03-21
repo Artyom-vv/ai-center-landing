@@ -19,7 +19,7 @@ const PricingPlans = () => {
             beforeContent={<RotatingCircle className="size-[620px] absolute -left-[120px] -bottom-[551px]"/>}
         >
             <FadeIn>
-                <div className="flex gap-normal">
+                <div className="flex xl:flex-row flex-col xl:gap-normal gap-1x-large">
                     <PricePanel
                         icon={<RiSpeedUpFill color="var(--color-neutral-text-heading)" size={24}/>}
                         sale={formatPrice(300000)}

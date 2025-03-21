@@ -1,7 +1,13 @@
 import React from 'react';
 import Section from "@/app/components/Section";
 import NewsPanel from "@/app/components/NewsPanel";
-import FadeIn from "@/app/components/FadeIn";
+import MobileSlider from "@/app/components/MobileSlider";
+
+const translationConfig: { [key: number]: number } = {
+    0: 66.66,
+    1: 0,
+    2: -66.66,
+};
 
 const AIIntegrationInfo = () => {
     return (
@@ -14,29 +20,29 @@ const AIIntegrationInfo = () => {
                 Подпишитесь на наш Telegram-канал и узнавайте о кейсах <br/>
                 для повышения эффективности предприятий!
             </>}
+            afterContainer={(
+                <MobileSlider className="mt-1x-large" translationConfig={translationConfig}>
+                    <NewsPanel
+                        title="Заголовок новости"
+                        description="15 января"
+                        link="https://web.telegram.org"
+                        linkLabel="Перейти в Telegram"
+                    />
+                    <NewsPanel
+                        title="Заголовок новости"
+                        description="15 января"
+                        link="https://web.telegram.org"
+                        linkLabel="Перейти в Telegram"
+                    />
+                    <NewsPanel
+                        title="Заголовок новости"
+                        description="15 января"
+                        link="https://web.telegram.org"
+                        linkLabel="Перейти в Telegram"
+                    />
+                </MobileSlider>
+            )}
         >
-            <FadeIn>
-                <div className="flex gap-normal">
-                    <NewsPanel
-                        title="Заголовок новости"
-                        description="15 января"
-                        link="https://web.telegram.org"
-                        linkLabel="Перейти в Telegram"
-                    />
-                    <NewsPanel
-                        title="Заголовок новости"
-                        description="15 января"
-                        link="https://web.telegram.org"
-                        linkLabel="Перейти в Telegram"
-                    />
-                    <NewsPanel
-                        title="Заголовок новости"
-                        description="15 января"
-                        link="https://web.telegram.org"
-                        linkLabel="Перейти в Telegram"
-                    />
-                </div>
-            </FadeIn>
         </Section>
     );
 };

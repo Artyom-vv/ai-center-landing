@@ -26,7 +26,7 @@ const LandingPanel: FC<LandingPanelBaseProps> = ({children, panelClass, tiltEnab
         <div
             {...props}
             className={cn(
-                "relative z-50 p-1x-large space-y-normal flex flex-col h-full",
+                "relative z-50 md:p-1x-large p-large space-y-normal flex flex-col h-full",
                 props.className
             )}
         >

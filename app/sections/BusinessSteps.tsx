@@ -1,11 +1,17 @@
+"use client"
+
 import React from 'react';
 import Section from "@/app/components/Section";
 import {BusinessStep} from "@/app/components/BusinessStep";
 import {BusinessStepsWrapper} from "@/app/components/BusinessStepContext";
 import RotatingCircle from "@/app/components/RotatingCircle";
 import FadeIn from "@/app/components/FadeIn";
+import {useBreakpoint} from "@/app/hooks/useBreakpoint";
 
 const BusinessSteps = () => {
+
+    const breakpoint = useBreakpoint();
+
     return (
         <Section
             title={
@@ -16,7 +22,7 @@ const BusinessSteps = () => {
             beforeContent={<RotatingCircle className="size-[472px] absolute -right-[180px] -bottom-[500px]"/>}
         >
             <FadeIn>
-                <BusinessStepsWrapper size={288} stepIncrement={80}>
+                <BusinessStepsWrapper size={breakpoint === 'xl' ? 288 : 308} stepIncrement={breakpoint === 'xl' ? 80 : 108}>
                     <BusinessStep
                         step={1}
                         title="Анализ и аудит"
