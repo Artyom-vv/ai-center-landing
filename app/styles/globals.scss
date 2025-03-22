@@ -26,3 +26,7 @@ html, body {
 svg {
     display: block;
 }
+
+.ReactModal__Body--open {
+    overflow: hidden;
+}

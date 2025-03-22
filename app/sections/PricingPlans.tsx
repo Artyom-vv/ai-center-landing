@@ -12,15 +12,20 @@ const PricingPlans = () => {
             title="Наши тарифы"
             subtitle={(
                 <>
-                    Разрабатываем и внедряем искусственный интеллект <br/>для оптимизации процессов и открытия новых
-                    возможностей роста
+                    <span className="max-md:hidden">
+                        Разрабатываем и внедряем искусственный интеллект <br/>для оптимизации процессов и открытия новых
+                        возможностей роста
+                    </span>
+                    <span className="md:hidden">
+                       Разрабатываем и внедряем ИИ <br/>для оптимизации процессов и открытия <br/>новых возможностей роста
+                    </span>
                 </>
             )}
-            beforeContent={<RotatingCircle className="size-[620px] absolute -left-[120px] -bottom-[551px]"/>}
+            beforeContent={<RotatingCircle className="max-md:hidden size-[620px] absolute -left-[120px] -bottom-[551px]"/>}
         >
             <FadeIn>
                 <div className="flex xl:flex-row flex-col xl:gap-normal gap-1x-large">
-                    <PricePanel
+                <PricePanel
                         icon={<RiSpeedUpFill color="var(--color-neutral-text-heading)" size={24}/>}
                         sale={formatPrice(300000)}
                         price={`от ${formatPrice(50000)}`}

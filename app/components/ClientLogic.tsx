@@ -5,7 +5,7 @@ import Modal from "react-modal";
 
 const ClientLogic = () => {
 
-    Modal.setAppElement("#app")
+    Modal.setAppElement("body")
 
     return <></>
 };

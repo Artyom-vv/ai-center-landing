@@ -7,11 +7,13 @@ import RotatingCircle from "@/app/components/RotatingCircle";
 const CustomAndUniqueSolutions = () => {
     return (
         <Section
-            beforeContent={<RotatingCircle className="size-[570px] absolute -right-[180px] -bottom-[310px]"/>}
+            beforeContent={<RotatingCircle className="size-[140px] absolute right-[150px] -bottom-[194px]"/>}
             title="А также - нестандартные решения"
+            contentClass="space-y-[0]"
             subtitle={<>
-                Интересные решения по автоматизации с помощью ИИ,<br/>
-                которые мы сможем реализовать
+                Интересные решения по автоматизации <br className="md:hidden"/> с помощью ИИ, <br
+                className="max-md:hidden"/>
+                которые мы сможем <br className="md:hidden"/> реализовать
             </>}
         >
             <AnimatedCards

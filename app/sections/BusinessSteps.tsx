@@ -19,7 +19,7 @@ const BusinessSteps = () => {
                 Всего 4 шага — и ваш бизнес начнёт <br/>работать на новом уровне!
             </>
         }
-            beforeContent={<RotatingCircle className="size-[472px] absolute -right-[180px] -bottom-[500px]"/>}
+            beforeContent={<RotatingCircle className="md:size-[472px] size-[509px] absolute -right-[300px] -bottom-[460px]"/>}
         >
             <FadeIn>
                 <BusinessStepsWrapper size={breakpoint === 'xl' ? 288 : 308} stepIncrement={breakpoint === 'xl' ? 80 : 108}>

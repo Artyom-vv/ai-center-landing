@@ -7,17 +7,17 @@ import FadeIn from "@/app/components/FadeIn";
 const FreeDemo = () => {
     return (
         <Section className="pt-[0]">
-            <FadeIn>
+            <FadeIn className="max-md:-mx-normal">
                 <div
-                    className="flex flex-col items-center gap-3x-large p-3x-large rounded-[16px] bg-brand-main-default">
+                    className="flex flex-col items-center md:gap-3x-large gap-large md:p-3x-large p-large rounded-[16px] bg-brand-main-default">
                     <div className="flex flex-col items-center space-y-normal text-center">
-                        <h4>Бесплатная демонстрация</h4>
-                        <p className="text-body-large">
+                        <h4 className="-tracking-[0.02rem]">Бесплатная демонстрация</h4>
+                        <p className="md:text-body-large text-body-normal">
                             Напишите в Telegram и узнайте, <br/>кто на той стороне — человек или ИИ?
                         </p>
                     </div>
                     <Button
-                        className="bg-neutral-solid-white hover:bg-neutral-solid-white hover:border-transparent !text-brand-text-default"
+                        className="bg-neutral-solid-white hover:bg-neutral-solid-white hover:border-transparent !text-brand-text-default max-md:w-full"
                         leftIcon={<RiTelegram2Fill size={16} color="var(--color-brand-text-default)"/>}>Написать в
                         Telegram</Button>
                 </div>

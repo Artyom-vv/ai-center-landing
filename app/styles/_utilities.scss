@@ -12,10 +12,6 @@
   @apply absolute left-1/2 top-[0] -translate-x-1/2 z-10
 }
 
-@utility hero-shape-tablet {
-  @apply hero-shape;
-}
-
 @utility rotating-circle {
   animation: spin 10s infinite linear;
 }

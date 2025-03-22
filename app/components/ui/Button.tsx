@@ -151,6 +151,7 @@ const Button: FC<ButtonProps> = ({
                                      onSubtle = false,
                                      iconOnly = false,
                                      variant = 'primary',
+                                     isDisabled = false,
                                      size = 'large',
                                      onPress,
                                      ...props
@@ -172,7 +173,7 @@ const Button: FC<ButtonProps> = ({
                 buttonVariants({
                     onsubtle: onSubtle,
                     size: size,
-                    disabled: buttonProps.disabled,
+                    disabled: isDisabled,
                     pressed: isPressed,
                     intent: variant,
                     icononly: iconOnly,

@@ -5,6 +5,7 @@ import ChipGroup from "@/app/components/ui/ChipGroup";
 import Chip from "@/app/components/ui/Chip";
 import Slider, {Slide} from "@/app/components/Slider";
 import {AnimatePresence, motion} from "framer-motion";
+import {useBreakpoint} from "@/app/hooks/useBreakpoint";
 
 const slides: {[k: string]: Slide[]} = {
     "1": [
@@ -39,6 +40,8 @@ const slides: {[k: string]: Slide[]} = {
 const AIImpactTabs = () => {
 
     const [activeTab, setActiveTab] = useState<string>("1")
+    const breakpoint = useBreakpoint();
+    const chipSize = breakpoint === "xl" || breakpoint === "md" ? 'large' : 'normal'
 
     const onTabHandle = (value?: string) => {
         if (value) {
@@ -49,11 +52,11 @@ const AIImpactTabs = () => {
     return (
         <>
             <ChipGroup defaultValue="1" onChange={onTabHandle} className="self-center">
-                <Chip value="1">Розничная торговля</Chip>
-                <Chip value="2">Юриспруденция</Chip>
-                <Chip value="3">Гостиничное дело</Chip>
-                <Chip value="4">Фитнес индустрия</Chip>
-                <Chip value="5">Медицина</Chip>
+                <Chip size={chipSize} value="1">Розничная торговля</Chip>
+                <Chip size={chipSize} value="2">Юриспруденция</Chip>
+                <Chip size={chipSize} value="3">Гостиничное дело</Chip>
+                <Chip size={chipSize} value="4">Фитнес индустрия</Chip>
+                <Chip size={chipSize} value="5">Медицина</Chip>
             </ChipGroup>
             <AnimatePresence mode="wait">
                 <motion.div

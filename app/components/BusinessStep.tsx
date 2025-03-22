@@ -18,6 +18,7 @@ export function BusinessStep({step, children, title, selected, ...props}: Busine
 
     const breakpoint = useBreakpoint();
     const isHydrated = useHydration()
+    const chipSize = breakpoint === "xl" || breakpoint === "md" ? 'large' : 'big'
 
     const {size, stepIncrement} = useBusinessStepContext();
     const calculatedSize = size + (step - 1) * stepIncrement;
@@ -32,7 +33,7 @@ export function BusinessStep({step, children, title, selected, ...props}: Busine
             {...props}
             {...(isHydrated ? { style: styles } : {})}
             className={cn(
-                "basis-[0] flex-grow flex flex-col gap-[32px] items-start relative p-1x-large rounded-[16px]",
+                "basis-[0] flex-grow flex flex-col md:gap-1x-large gap-large items-start relative p-1x-large rounded-[16px]",
                 {
                     "bg-neutral-bg-subtle-default": !selected,
                     "bg-brand-main-default": selected
@@ -40,7 +41,7 @@ export function BusinessStep({step, children, title, selected, ...props}: Busine
                 props.className
             )}
         >
-            <Chip onSubtle isDisabled className={cn("mb-auto", {"!bg-brand-main-hover": selected})}>
+            <Chip size={chipSize} onSubtle isDisabled className={cn("mb-auto", {"!bg-brand-main-hover": selected})}>
                 {step} шаг
             </Chip>
             <div className="space-y-normal">

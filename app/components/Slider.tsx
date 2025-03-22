@@ -56,19 +56,22 @@ const Slider: FC<SliderProps> = ({slides}) => {
     const Actions: FC<{ className: string }> = ({className}) => {
         return <div
             className={cn(
-                "flex gap-normal mt-auto",
+                "flex md:gap-normal gap-1x-small xl:mt-auto",
                 className
             )}>
+            <Button className="md:hidden" onSubtle iconOnly variant="secondary" onPress={prevSlide}>
+                <ArrowLeft/>
+            </Button>
             <div className="grow">
                 <div
-                    className="p-normal h-[48px] bg-neutral-bg-on-subtle-default rounded-[8px] text-body-big space-x-2x-small inline-flex items-center justify-center">
+                    className="p-normal h-[48px] bg-neutral-bg-on-subtle-default rounded-[8px] text-body-big space-x-2x-small inline-flex items-center justify-center max-md:w-full">
                     <span className="text-neutral-text-secondary">{currentIndex + 1}</span>
                     <span className="text-neutral-text-tertiary">/ {slides.length}</span>
                 </div>
             </div>
 
             <div className="flex gap-1x-small">
-                <Button onSubtle iconOnly variant="secondary" onPress={prevSlide}>
+                <Button className="max-md:hidden" onSubtle iconOnly variant="secondary" onPress={prevSlide}>
                     <ArrowLeft/>
                 </Button>
                 <Button onSubtle iconOnly variant="secondary" onPress={nextSlide}>
@@ -81,7 +84,7 @@ const Slider: FC<SliderProps> = ({slides}) => {
     return (
         <FadeIn>
             <div
-                className="rounded-[32px] p-1x-large flex xl:flex-row flex-col gap-1x-large w-full bg-neutral-bg-subtle-default overflow-hidden"> {/* Добавлен overflow-hidden */}
+                className="rounded-[32px] md:p-1x-large p-large flex xl:flex-row flex-col md:gap-1x-large gap-large w-full bg-neutral-bg-subtle-default overflow-hidden max-md:h-[598px]"> {/* Добавлен overflow-hidden */}
                 <div className="xl:basis-[384px] shrink-0 flex flex-col relative z-10">
                     <AnimatePresence mode="wait">
                         <motion.div
@@ -107,7 +110,7 @@ const Slider: FC<SliderProps> = ({slides}) => {
                 <AnimatePresence mode="wait" custom={direction}>
                     <motion.img
                         key={currentIndex}
-                        className="xl:h-[480px] h-[320px] bg-neutral-bg-on-subtle-default rounded-[8px] grow xl:max-w-[800px] max-w-[568px] object-cover relative z-[1]"
+                        className="h-full xl:max-h-[480px] md:max-h-[320px] max-h-[153px] bg-neutral-bg-on-subtle-default rounded-[8px] grow xl:max-w-[800px] md:max-w-[568px] max-w-[272px] object-cover relative z-[1] max-md:mt-auto"
                         src={slides[currentIndex]?.src}
                         alt={slides[currentIndex]?.title}
                         initial="hidden"

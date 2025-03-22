@@ -11,7 +11,8 @@ const PopularSolutions = () => {
                 Решения, востребованные <br className="xl:hidden block"/> у наших клиентов
             </>}
             subtitle={<>
-                Перечень самых востребованных решений<br/>для автоматизации с помощью ИИ
+                Перечень самых востребованных <br className="md:hidden"/> решений<br className="max-md:hidden"/>для
+                автоматизации<br className="md:hidden"/> с помощью ИИ
             </>}
             contentClass="space-y-[0]"
         >

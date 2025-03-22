@@ -11,13 +11,16 @@ const PersonPanel: FC<PersonPanelProps> = ({title, src, ...props}) => {
         <LandingPanel
             {...props}
             tiltEnable={false}
-            panelClass={cn("xl:size-[328px] size-[308px] shrink-0")}
+            panelClass={cn("xl:size-[328px] md:size-[308px] size-[156px] shrink-0")}
             className={cn(
                 props.className,
-                "relative text-center"
+                "relative text-center max-md:p-normal"
             )}>
-            <img className="absolute bottom-1x-large left-[0] object-cover h-full w-full" src={src} alt={title}/>
-            <h5 className="mt-auto">{title}</h5>
+            <img className="absolute xl:bottom-1x-large md:bottom-large bottom-normal left-[0] object-cover h-full w-full" src={src} alt={title}/>
+            <div className="mt-auto">
+                <h5 className="max-md:hidden">{title}</h5>
+                <p className="text-body-big md:hidden">{title}</p>
+            </div>
         </LandingPanel>
     );
 };

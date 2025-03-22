@@ -28,8 +28,8 @@ const chipVariants = cva(
                 true: null
             },
             size: {
-                large: "px-normal h-(--size-large) text-body-big font-heading",
-                big: "px-normal h-(--size-large) text-body-big font-heading",
+                large: "px-normal h-(--size-large) text-body-big",
+                big: "px-normal h-[40px] text-body-big",
                 normal: "px-[11px] h-[32px] text-body-normal"
             },
             pressed: {

@@ -26,8 +26,10 @@ const statsData = [
 const StartAitTransformation = () => {
     return (
         <Section
-            beforeContent={<RotatingCircle className="size-[552px] absolute -right-[268px] -bottom-[534px]"/>}
-            title="Приступите к ИИ-трансформации уже сегодня!">
+            beforeContent={<RotatingCircle className="md:size-[552px] size-[140px] absolute md:-right-[268px] right-[44px] md:-bottom-[534px] -bottom-[276px]"/>}
+            title={<>
+                Приступите <br className="md:hidden"/> к ИИ-трансформации <br className="md:hidden"/>уже сегодня!
+            </>}>
             <TiltedCards className="xl:block hidden">
                 {statsData.map((stat, index) => (
                     <StatsPanel key={index} title={stat.title} description={stat.description} src={stat.src} />

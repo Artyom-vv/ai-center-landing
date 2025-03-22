@@ -11,7 +11,7 @@ const AdvantagePanel: FC<AdvantagePanelProps> = ({title, description, icon, ...p
         <LandingPanel
             {...props}
             panelClass={cn(
-                "xl:h-[512px] xl:basis-[416px]",
+                "xl:basis-[416px]",
                 props.className,
             )}>
             <div

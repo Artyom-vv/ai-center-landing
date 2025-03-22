@@ -34,7 +34,7 @@ const Section: FC<SectionProps> = ({title, subtitle, containerClass, beforeConte
         <section
             {...props}
             className={cn(
-                "py-[96px]",
+                "md:py-[96px] py-5x-large",
                 "relative z-20",
                 props.className
             )}>

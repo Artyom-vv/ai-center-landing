@@ -27,7 +27,7 @@ const AnimatedCards = ({firstRowCards, secondRowCards, reverse = false}: Animate
     };
 
     return (
-        <div className="mt-5x-large">
+        <div className="md:mt-5x-large mt-1x-large">
             <div
                 className="space-y-normal rotate-[-1.5deg] xl:block hidden"
                 ref={ref}>

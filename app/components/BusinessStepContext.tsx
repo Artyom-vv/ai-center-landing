@@ -18,7 +18,7 @@ interface BusinessStepProviderProps {
 export function BusinessStepsWrapper({size, stepIncrement, children}: BusinessStepProviderProps) {
     return (
         <BusinessStepContext.Provider value={{size, stepIncrement}}>
-            <div className="flex xl:flex-row flex-col gap-normal xl:items-end items-start">
+            <div className="flex xl:flex-row flex-col md:gap-normal gap-large xl:items-end items-start">
                 {children}
             </div>
         </BusinessStepContext.Provider>

@@ -9,8 +9,8 @@ const AiImpactSection = () => {
     return (
         <Section
             beforeContent={<>
-                <RotatingCircle className="size-[690px] absolute -right-[400px] -top-[294px]"/>
-                <RotatingCircle className="size-[134px] absolute left-[230px] -bottom-[172px]"/>
+                <RotatingCircle className="md:size-[690px] size-[120px] absolute md:-right-[400px] md:left-auto left-[70px] md:-top-[294px] -top-[110px]"/>
+                <RotatingCircle className="md:size-[134px] size-[400px] absolute md:left-[230px] left-[170px] md:-bottom-[172px] -bottom-[286px]"/>
             </>}
             title={<>
                 Узнайте как ИИ трансформирует <br className="xl:hidden block"/> ваш бизнес!

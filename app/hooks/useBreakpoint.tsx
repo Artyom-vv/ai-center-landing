@@ -9,19 +9,16 @@ const breakpoints = {
 type Breakpoint = keyof typeof breakpoints | "xs";
 
 export const useBreakpoint = (): Breakpoint => {
-    const getBreakpoint = (): Breakpoint => {
-        if (typeof window === "undefined") return "xs"; // SSR: избегаем ошибок
-        if (window.matchMedia(breakpoints.xl).matches) return "xl";
-        if (window.matchMedia(breakpoints.md).matches) return "md";
-        if (window.matchMedia(breakpoints.sm).matches) return "sm";
-        return "xs";
-    };
-
-    const [breakpoint, setBreakpoint] = useState<Breakpoint>(() =>
-        typeof window === "undefined" ? "xs" : getBreakpoint()
-    );
+    const [breakpoint, setBreakpoint] = useState<Breakpoint>("xs");
 
     useEffect(() => {
+        const getBreakpoint = (): Breakpoint => {
+            if (window.matchMedia(breakpoints.xl).matches) return "xl";
+            if (window.matchMedia(breakpoints.md).matches) return "md";
+            if (window.matchMedia(breakpoints.sm).matches) return "sm";
+            return "xs";
+        };
+
         const updateBreakpoint = () => setBreakpoint(getBreakpoint());
 
         const mediaQueries = Object.values(breakpoints).map((query) => {

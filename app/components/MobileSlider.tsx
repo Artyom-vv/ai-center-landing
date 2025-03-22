@@ -46,6 +46,7 @@ const MobileSlider: FC<SliderProps> = ({ children, translationConfig, ...props }
                         {children}
                     </div>
                     <Button
+                        isDisabled={activeIndex === 0}
                         onPress={prev}
                         onSubtle
                         className="xl:hidden flex absolute top-1/2 left-[0] -translate-y-1/2 z-30"
@@ -56,6 +57,7 @@ const MobileSlider: FC<SliderProps> = ({ children, translationConfig, ...props }
                         <RiArrowLeftSLine size={16} color="var(--color-neutral-text-primary)" />
                     </Button>
                     <Button
+                        isDisabled={activeIndex === 2}
                         onPress={next}
                         onSubtle
                         className="xl:hidden flex absolute top-1/2 right-[0] -translate-y-1/2 z-30"
