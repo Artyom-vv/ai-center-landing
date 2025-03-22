@@ -1,7 +1,7 @@
 import Hero from "@/app/sections/Hero";
 import TransformBusinessAi from "@/app/sections/TransformBusinessAi";
 import AIImpact from "@/app/sections/AIImpactSection";
-import StartAITTransformation from "@/app/sections/StartAITTransformation";
+import StartAITTransformation from "@/app/sections/StartAiTransformation";
 import CustomSolutions from "@/app/sections/CustomSolutions";
 import PopularSolutions from "@/app/sections/PopularSolutions";
 import AIAdvantage from "@/app/sections/AIAdvantage";
@@ -13,24 +13,28 @@ import FreeDemo from "@/app/sections/FreeDemo";
 import Footer from "@/app/sections/Footer";
 import React from "react";
 import ClientLogic from "@/app/components/ClientLogic";
+import RequestModal, {RequestModalProvider} from "@/app/components/RequestModal";
 
 export default function Home() {
     return (
-        <div id="app" className="wrapper overflow-x-hidden flex flex-col">
-            <ClientLogic/>
-            <Hero/>
-            <TransformBusinessAi/>
-            <AIImpact/>
-            <StartAITTransformation/>
-            <CustomSolutions/>
-            <PopularSolutions/>
-            <AIAdvantage/>
-            <CustomAndUniqueSolutions/>
-            <AIIntegrationInfo/>
-            <BusinessSteps/>
-            <PricingPlans/>
-            <FreeDemo/>
-            <Footer/>
-        </div>
+        <RequestModalProvider>
+            <div className="wrapper overflow-x-hidden flex flex-col">
+                <RequestModal/>
+                <ClientLogic/>
+                <Hero/>
+                <TransformBusinessAi/>
+                <AIImpact/>
+                <StartAITTransformation/>
+                <CustomSolutions/>
+                <PopularSolutions/>
+                <AIAdvantage/>
+                <CustomAndUniqueSolutions/>
+                <AIIntegrationInfo/>
+                <BusinessSteps/>
+                <PricingPlans/>
+                <FreeDemo/>
+                <Footer/>
+            </div>
+        </RequestModalProvider>
     );
 }

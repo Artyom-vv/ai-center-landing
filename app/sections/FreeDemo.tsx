@@ -3,6 +3,7 @@ import Section from "@/app/components/Section";
 import Button from "@/app/components/ui/Button";
 import {RiTelegram2Fill} from "@remixicon/react";
 import FadeIn from "@/app/components/FadeIn";
+import Link from "next/link";
 
 const FreeDemo = () => {
     return (
@@ -16,10 +17,12 @@ const FreeDemo = () => {
                             Напишите в Telegram и узнайте, <br/>кто на той стороне — человек или ИИ?
                         </p>
                     </div>
-                    <Button
-                        className="bg-neutral-solid-white hover:bg-neutral-solid-white hover:border-transparent !text-brand-text-default max-md:w-full"
-                        leftIcon={<RiTelegram2Fill size={16} color="var(--color-brand-text-default)"/>}>Написать в
-                        Telegram</Button>
+                    <Link className="no-underline" href="https://web.telegram.org/k/" target="_blank">
+                        <Button
+                            className="bg-neutral-solid-white hover:bg-neutral-solid-white hover:border-transparent !text-brand-text-default max-md:w-full"
+                            leftIcon={<RiTelegram2Fill size={16} color="var(--color-brand-text-default)"/>}>Написать в
+                            Telegram</Button>
+                    </Link>
                 </div>
             </FadeIn>
         </Section>

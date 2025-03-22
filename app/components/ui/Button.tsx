@@ -11,7 +11,7 @@ export interface ButtonProps extends AriaButtonOptions<'button'>, HTMLButtonAria
     children?: React.ReactNode;
     iconOnly?: boolean;
     size?: "1x-large" | "large";
-    variant?: "primary" | "secondary"
+    variant?: "primary" | "secondary" | 'ghost';
     leftIcon?: React.ReactNode;
     onSubtle?: boolean
     round?: boolean
@@ -25,6 +25,7 @@ const buttonVariants = cva(
             intent: {
                 primary: "bg-brand-main-default",
                 secondary: null,
+                ghost: "bg-transparent",
             },
             size: {
                 "1x-large": "h-(--size-1x-large) md:text-body-large text-body-big font-bold",

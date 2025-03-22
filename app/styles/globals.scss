@@ -29,4 +29,8 @@ svg {
 
 .ReactModal__Body--open {
     overflow: hidden;
+    @media (hover: hover) and (pointer: fine) {
+        /* Стили для устройств с мышью или трекпадом */
+        padding-right: 16px;
+    }
 }

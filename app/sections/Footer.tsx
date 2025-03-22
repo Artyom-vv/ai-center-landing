@@ -30,7 +30,7 @@ const Footer = () => {
                                 445-40-53</Link>
                             <Link variant="text" nowrap={false} leftIcon={<MailLine/>}
                                   href="mailto:info@tanostech.com">info@tanostech.com</Link>
-                            <Link variant="text" nowrap={false} leftIcon={<RoadMapLine/>} href="#">г. Казань, ул. Карла
+                            <Link variant="text" nowrap={false} leftIcon={<RoadMapLine/>} href="https://yandex.ru/maps/-/CHFx5H~A" target="_blank">г. Казань, ул. Карла
                                 Маркса, д. 5, оф. 18</Link>
                         </div>
                         <div className="md:row-start-2 md:col-span-6 col-span-2 flex flex-col gap-normal basis-[0] grow">

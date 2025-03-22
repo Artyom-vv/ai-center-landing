@@ -4,6 +4,7 @@ import MailAiLine from "../../public/svg/mail-ai-line.svg"
 import {RiMailAiLine} from "@remixicon/react";
 import {scrollToSection} from "@/app/functions/scrollToSection";
 import MobileMenuButton from "@/app/components/MobileMenuButton";
+import {useRequestModal} from "@/app/components/RequestModal";
 
 export const links = [
     {
@@ -21,6 +22,7 @@ export const links = [
 ];
 
 const Header = () => {
+    const {openModal} = useRequestModal();
 
     return (
         <header className="py-normal w-full relative z-20">
@@ -39,10 +41,10 @@ const Header = () => {
                     ))}
                 </div>
                 <div className="xl:grow xl:col-span-3">
-                    <Button className="xl:flex hidden ml-auto" leftIcon={<MailAiLine/>}>
+                    <Button onPress={openModal} className="xl:flex hidden ml-auto" leftIcon={<MailAiLine/>}>
                         Напишите нам
                     </Button>
-                    <Button className="xl:hidden md:flex ml-auto" iconOnly>
+                    <Button onPress={openModal} className="xl:hidden md:flex ml-auto" iconOnly>
                         <RiMailAiLine size={16} color="var(--color-neutral-solid-white)"></RiMailAiLine>
                     </Button>
                 </div>

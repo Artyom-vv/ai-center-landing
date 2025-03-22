@@ -17,7 +17,7 @@ const PersonPanel: FC<PersonPanelProps> = ({title, src, ...props}) => {
                 "relative text-center max-md:p-normal"
             )}>
             <img className="absolute xl:bottom-1x-large md:bottom-large bottom-normal left-[0] object-cover h-full w-full" src={src} alt={title}/>
-            <div className="mt-auto">
+            <div className="mt-auto relative z-10">
                 <h5 className="max-md:hidden">{title}</h5>
                 <p className="text-body-big md:hidden">{title}</p>
             </div>

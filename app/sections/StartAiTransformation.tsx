@@ -4,6 +4,7 @@ import StatsPanel from "@/app/components/StatsPanel";
 import TiltedCards from "@/app/components/TiltedCards";
 import Button from "@/app/components/ui/Button";
 import RotatingCircle from "@/app/components/RotatingCircle";
+import StartAiTransformationButton from "@/app/components/StartAiTransformationButton";
 
 const statsData = [
     {
@@ -23,7 +24,7 @@ const statsData = [
     }
 ];
 
-const StartAitTransformation = () => {
+const StartAiTransformation = () => {
     return (
         <Section
             beforeContent={<RotatingCircle className="md:size-[552px] size-[140px] absolute md:-right-[268px] right-[44px] md:-bottom-[534px] -bottom-[276px]"/>}
@@ -35,9 +36,7 @@ const StartAitTransformation = () => {
                     <StatsPanel key={index} title={stat.title} description={stat.description} src={stat.src} />
                 ))}
             </TiltedCards>
-            <Button className="self-center xl:flex hidden">
-                Начните внедрение
-            </Button>
+            <StartAiTransformationButton/>
             <div className="xl:hidden flex flex-col gap-1x-large">
                 {statsData.map((stat, index) => (
                     <StatsPanel key={index} title={stat.title} description={stat.description} src={stat.src} />
@@ -47,4 +46,4 @@ const StartAitTransformation = () => {
     );
 };
 
-export default StartAitTransformation;
+export default StartAiTransformation;

@@ -4,6 +4,7 @@ import Button from "@/app/components/ui/Button";
 import {RiSparkling2Fill} from "@remixicon/react";
 import RotatingCircle from "@/app/components/RotatingCircle";
 import FadeIn from "@/app/components/FadeIn";
+import AiAdvantageButton from "@/app/components/AIAdvantageButton";
 
 const AIAdvantage = () => {
     return (
@@ -22,7 +23,7 @@ const AIAdvantage = () => {
                             <RiSparkling2Fill className="max-xl:size-[24px] max-md:h-[32px] max-md:w-[20px]" size={32} color="var(--color-cyan-500)"/>
                         </div>
                     </div>
-                    <Button className="max-md:w-full">Оставить заявку</Button>
+                    <AiAdvantageButton/>
                 </div>
             </FadeIn>
         </Section>
