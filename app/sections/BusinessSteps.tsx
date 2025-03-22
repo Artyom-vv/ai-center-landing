@@ -14,6 +14,7 @@ const BusinessSteps = () => {
 
     return (
         <Section
+            id="steps"
             title={
             <>
                 Всего 4 шага — и ваш бизнес начнёт <br/>работать на новом уровне!

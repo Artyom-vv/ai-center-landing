@@ -2,7 +2,23 @@ import React from 'react';
 import Button from "@/app/components/ui/Button";
 import MailAiLine from "../../public/svg/mail-ai-line.svg"
 import {RiMailAiLine} from "@remixicon/react";
+import {scrollToSection} from "@/app/functions/scrollToSection";
 import MobileMenuButton from "@/app/components/MobileMenuButton";
+
+export const links = [
+    {
+        text: "ИИ для бизнеса",
+        onClick: () => scrollToSection('business-ai')
+    },
+    {
+        text: "Этапы внедрения",
+        onClick: () => scrollToSection('steps')
+    },
+    {
+        text: "Наши тарифы",
+        onClick: () => scrollToSection('price-plans')
+    }
+];
 
 const Header = () => {
 
@@ -17,12 +33,10 @@ const Header = () => {
                         ИИ-трансформации</a>
                 </div>
                 <div className="col-span-6 xl:flex hidden gap-1x-large justify-center">
-                    <a className="cursor-pointer select-none text-body-big text-neutral-text-primary active:text-neutral-text-heading no-underline">ИИ
-                        для бизнеса</a>
-                    <a className="cursor-pointer select-none text-body-big text-neutral-text-primary active:text-neutral-text-heading no-underline">Этапы
-                        внедрения</a>
-                    <a className="cursor-pointer select-none text-body-big text-neutral-text-primary active:text-neutral-text-heading no-underline">Наши
-                        тарифы</a>
+                    {links.map(({text, onClick}, index) => (
+                        <a key={index} onClick={onClick}
+                           className="cursor-pointer select-none text-body-big text-neutral-text-primary active:text-neutral-text-heading no-underline">{text}</a>
+                    ))}
                 </div>
                 <div className="xl:grow xl:col-span-3">
                     <Button className="xl:flex hidden ml-auto" leftIcon={<MailAiLine/>}>

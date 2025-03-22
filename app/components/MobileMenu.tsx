@@ -4,6 +4,7 @@ import React, {FC} from 'react';
 import Modal from "react-modal";
 import Button from "@/app/components/ui/Button";
 import {RiCloseLargeLine, RiTelegram2Fill} from "@remixicon/react";
+import {links} from "@/app/components/Header";
 
 export interface MobileMenuProps {
     isOpen: boolean;
@@ -11,6 +12,12 @@ export interface MobileMenuProps {
 }
 
 const MobileMenu: FC<MobileMenuProps> = ({isOpen, onClose}) => {
+
+    const onLinkClick = (callback: () => void) => {
+        callback();
+        onClose?.()
+    }
+
     return (
         <Modal
             style={{
@@ -26,9 +33,9 @@ const MobileMenu: FC<MobileMenuProps> = ({isOpen, onClose}) => {
                         </Button>
                     </div>
                     <div className="grow flex flex-col justify-center gap-large md:px-[68px] max-md:container my-large">
-                        <h2>ИИ для бизнеса</h2>
-                        <h2>Этапы внедрения</h2>
-                        <h2>Наши тарифы</h2>
+                        {links.map(({text, onClick}, index) => (
+                            <h2 key={index} onClick={() => onLinkClick(onClick)}>{text}</h2>
+                        ))}
                     </div>
                     <div className="py-large border-t-[1px] border-solid border-t-neutral-border-on-surface-default md:px-[68px] max-md:container flex md:flex-row flex-col md:gap-normal gap-large md:items-center">
                         <div className="space-y-[8px] grow">

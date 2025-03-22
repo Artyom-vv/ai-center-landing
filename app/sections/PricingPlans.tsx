@@ -8,6 +8,7 @@ import RotatingCircle from "@/app/components/RotatingCircle";
 const PricingPlans = () => {
     return (
         <Section
+            id="price-plans"
             containerClass="space-y-0"
             title="Наши тарифы"
             subtitle={(

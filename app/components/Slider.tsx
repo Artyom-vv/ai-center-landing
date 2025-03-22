@@ -85,7 +85,7 @@ const Slider: FC<SliderProps> = ({slides}) => {
         <FadeIn>
             <div
                 className="rounded-[32px] md:p-1x-large p-large flex xl:flex-row flex-col md:gap-1x-large gap-large w-full bg-neutral-bg-subtle-default overflow-hidden max-md:h-[598px]"> {/* Добавлен overflow-hidden */}
-                <div className="xl:basis-[384px] shrink-0 flex flex-col relative z-10">
+                <div className="xl:max-w-[384px] flex flex-col relative z-10">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={currentIndex}
@@ -96,7 +96,7 @@ const Slider: FC<SliderProps> = ({slides}) => {
                             className="space-y-normal"
                         >
                             <h5 className="text-2xl font-bold">{slides[currentIndex]?.title}</h5>
-                            <p className="text-body-big text-neutral-text-secondary">
+                            <p className="text-body-big text-neutral-text-secondary whitespace-normal">
                                 {slides[currentIndex]?.description}
                             </p>
                         </motion.div>
