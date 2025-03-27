@@ -7,9 +7,10 @@ interface PhoneInputProps {
     value?: string;
     onChange?: (phone: string) => void;
     onSubtle?: boolean
+    "aria-label": string;
 }
 
-const PhoneInput: FC<PhoneInputProps> = ({ value = "", onSubtle = false, onChange }) => {
+const PhoneInput: FC<PhoneInputProps> = ({ value = "", onSubtle = false, onChange, "aria-label": ariaLabel }) => {
     const [isValid, setIsValid] = useState(true);
     const [showMenu, setShowMenu] = useState(false);
     const [phone, setPhone] = useState(value);
@@ -106,6 +107,7 @@ const PhoneInput: FC<PhoneInputProps> = ({ value = "", onSubtle = false, onChang
             />
 
             <Input
+                aria-label={ariaLabel}
                 onSubtle={onSubtle}
                 placeholder="+7 000 000 00-00"
                 onChange={handleChange}

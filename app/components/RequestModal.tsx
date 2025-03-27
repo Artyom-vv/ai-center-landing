@@ -1,6 +1,6 @@
 "use client"
 
-import React, {createContext, DetailedHTMLProps, useContext, useState} from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import Button from "@/app/components/ui/Button";
 import Modal from "react-modal";
 import ChipGroup from "@/app/components/ui/ChipGroup";
@@ -40,40 +40,39 @@ export const useRequestModal = () => {
     return context;
 };
 
+const Content = () => {
+    return (
+        <div
+            className="md:rounded-[32px] rounded-tl-[16px] rounded-tr-[16px] md:p-1x-large px-normal py-large bg-neutral-bg-subtle-default space-y-1x-large flex flex-col xl:max-w-[514px] md:max-w-[480px]">
+            <h4>Готовы к изменениям? <br/><span
+                className="hero-text-gradient">Действуйте прямо сейчас!</span>
+            </h4>
+            <div className="space-y-large">
+                <Input aria-label="name" placeholder="Как вас зовут?" onSubtle/>
+                <PhoneInput aria-label="phone" onSubtle value="fawfwa" onChange={() => {}}/>
+                <ChipGroup aria-label="tags" className="justify-start gap-small" defaultValue="1">
+                    <Chip value="1" onSubtle size="normal">Розница</Chip>
+                    <Chip value="2" onSubtle size="normal">Юриспруденция</Chip>
+                    <Chip value="3" onSubtle size="normal">Гостиничное дело</Chip>
+                    <Chip value="4" onSubtle size="normal">Фитнес</Chip>
+                    <Chip value="5" onSubtle size="normal">Медицина</Chip>
+                    <Chip value="6" onSubtle size="normal">Другое</Chip>
+                </ChipGroup>
+                <Checkbox aria-label="feedback" onSubtle>Свяжитесь со мной в Telegram</Checkbox>
+                <Input aria-label="telegram" placeholder="Ваш никнейм в telegram" onSubtle/>
+            </div>
+            <div className="space-y-large">
+                <Button className="w-full">Отправить заявку</Button>
+                <p className="text-body-small text-neutral-text-quaternary text-center">
+                    Оставляя заявку, вы соглашаетесь на обработку персональных данных
+                </p>
+            </div>
+        </div>
+    );
+}
+
 const RequestModal: React.FC = () => {
     const {isModalOpen, closeModal} = useRequestModal();
-
-    const Content = () => {
-        return (
-            <div
-                className="md:rounded-[32px] rounded-tl-[16px] rounded-tr-[16px] md:p-1x-large px-normal py-large bg-neutral-bg-subtle-default space-y-1x-large flex flex-col xl:max-w-[514px] md:max-w-[480px]">
-                <h4>Готовы к изменениям? <br/><span
-                    className="hero-text-gradient">Действуйте прямо сейчас!</span>
-                </h4>
-                <div className="space-y-large">
-                    <Input placeholder="Как вас зовут?" onSubtle/>
-                    <PhoneInput onSubtle value="fawfwa" onChange={() => {
-                    }}/>
-                    <ChipGroup className="justify-start gap-small" defaultValue="1">
-                        <Chip value="1" onSubtle size="normal">Розница</Chip>
-                        <Chip value="2" onSubtle size="normal">Юриспруденция</Chip>
-                        <Chip value="3" onSubtle size="normal">Гостиничное дело</Chip>
-                        <Chip value="4" onSubtle size="normal">Фитнес</Chip>
-                        <Chip value="5" onSubtle size="normal">Медицина</Chip>
-                        <Chip value="6" onSubtle size="normal">Другое</Chip>
-                    </ChipGroup>
-                    <Checkbox onSubtle>Свяжитесь со мной в Telegram</Checkbox>
-                    <Input placeholder="Ваш никнейм в telegram" onSubtle/>
-                </div>
-                <div className="space-y-large">
-                    <Button className="w-full">Отправить заявку</Button>
-                    <p className="text-body-small text-neutral-text-quaternary text-center">Оставляя заявку,
-                        вы
-                        соглашаетесь на обработку персональных данных</p>
-                </div>
-            </div>
-        )
-    }
 
     return (
         <Modal
