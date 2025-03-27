@@ -17,9 +17,9 @@ const Hero = () => {
                 <div className="container flex justify-center items-center h-full relative z-50">
                     <div className="flex flex-col text-center items-center">
                         <br className="md:hidden"/>
-
-                        <h3>Внедрите искусственный интеллект <br className="md:block hidden"/> в ваш бизнес и сократите
-                        </h3>
+                        <h3 className="max-md:hidden">Внедрите искусственный интеллект <br
+                            className="md:block hidden"/> в ваш бизнес и сократите</h3>
+                        <h3 className="md:hidden">Автоматизируйте бизнес с ИИ <br/> и сократите затраты</h3>
                         <h3 className="hero-text-gradient">до 60% за 30 дней</h3>
                         <p className="md:text-body-large text-body-big mt-large">
                             <span className="xl:hidden">Трансформируйте свой бизнес уже сегодня</span>
