@@ -43,11 +43,10 @@ export const useRequestModal = () => {
 const RequestModal: React.FC = () => {
     const {isModalOpen, closeModal} = useRequestModal();
 
-    const Content = (props: any) => {
+    const Content = () => {
         return (
             <div
-                {...props}
-                className="outline-none md:rounded-[32px] rounded-tl-[16px] rounded-tr-[16px] md:p-1x-large px-normal py-large bg-neutral-bg-subtle-default space-y-1x-large flex flex-col xl:max-w-[514px] md:max-w-[480px]">
+                className="md:rounded-[32px] rounded-tl-[16px] rounded-tr-[16px] md:p-1x-large px-normal py-large bg-neutral-bg-subtle-default space-y-1x-large flex flex-col xl:max-w-[514px] md:max-w-[480px]">
                 <h4>Готовы к изменениям? <br/><span
                     className="hero-text-gradient">Действуйте прямо сейчас!</span>
                 </h4>
@@ -78,7 +77,7 @@ const RequestModal: React.FC = () => {
 
     return (
         <Modal
-            overlayClassName="flex md:items-center items-end justify-center z-[999] bg-[#00000080] backdrop-blur-[8px] absolute top-[0] left-[0] h-full w-full"
+            overlayClassName="flex md:items-center items-end justify-center z-[999] bg-[#00000080] backdrop-blur-[8px] fixed top-[0] left-[0] h-full w-full"
             isOpen={isModalOpen}
             onRequestClose={closeModal}
             className="h-full relative transition-all duration-300"
@@ -89,22 +88,24 @@ const RequestModal: React.FC = () => {
                             size="1x-large" iconOnly>
                         <RiCloseLargeLine size={16} color="var(--color-neutral-text-primary)"></RiCloseLargeLine>
                     </Button>
-                    <motion.div
-                        className="max-md:hidden"
-                        initial={{opacity: 0, scale: 0.9}}
-                        animate={{opacity: 1, scale: 1}}
-                        transition={{duration: 0.3, type: "ease-in"}}
-                    >
-                        <Content props={props}/>
-                    </motion.div>
-                    <motion.div
-                        className="md:hidden"
-                        initial={{opacity: 0, translateY: 20}}
-                        animate={{opacity: 1, translateY: 0}}
-                        transition={{duration: 0.3, type: "ease-in"}}
-                    >
-                        <Content props={props}/>
-                    </motion.div>
+                    <div {...props} className="h-full flex flex-col items-center justify-center outline-none">
+                        <motion.div
+                            className="max-md:hidden"
+                            initial={{opacity: 0, scale: 0.9}}
+                            animate={{opacity: 1, scale: 1}}
+                            transition={{duration: 0.3, type: "ease-in"}}
+                        >
+                            <Content/>
+                        </motion.div>
+                        <motion.div
+                            className="md:hidden"
+                            initial={{opacity: 0, translateY: 20}}
+                            animate={{opacity: 1, translateY: 0}}
+                            transition={{duration: 0.3, type: "ease-in"}}
+                        >
+                            <Content/>
+                        </motion.div>
+                    </div>
                 </>
             )}
         >
