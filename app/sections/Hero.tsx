@@ -16,17 +16,20 @@ const Hero = () => {
             <section className="xl:h-[800px] md:h-[1024px] md:py-[0] py-5x-large relative z-10">
                 <div className="container flex justify-center items-center h-full relative z-50">
                     <div className="flex flex-col text-center items-center">
-                        <h3>Автоматизируйте бизнес <br className="md:block hidden"/>с ИИ <br
-                            className="md:hidden"/> и сократите затраты</h3>
+                        <br className="md:hidden"/>
+
+                        <h3>Внедрите искусственный интеллект <br className="md:block hidden"/> в ваш бизнес и сократите
+                        </h3>
                         <h3 className="hero-text-gradient">до 60% за 30 дней</h3>
                         <p className="md:text-body-large text-body-big mt-large">
                             <span className="xl:hidden">Трансформируйте свой бизнес уже сегодня</span>
                             <span className="xl:block hidden">Мы предлагаем решения, которые быстро окупаются</span>
                         </p>
-                       <HeroButton/>
+                        <HeroButton/>
                     </div>
                 </div>
-                <div className="container p-[0] absolute left-1/2 top-[0] -translate-x-1/2 flex justify-center h-full overflow-hidden">
+                <div
+                    className="container p-[0] absolute left-1/2 top-[0] -translate-x-1/2 flex justify-center h-full overflow-hidden">
                     <Shape className="hero-shape w-[1440px] h-full xl:block hidden"/>
                     <TabletShape className="hero-shape w-[1440px] h-[1120px] hidden md:block xl:hidden"/>
                     <MobileShape className="hero-shape -top-[152px] w-[1030px] h-[800px] md:hidden block"/>

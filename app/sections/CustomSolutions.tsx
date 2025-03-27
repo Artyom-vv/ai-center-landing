@@ -33,7 +33,7 @@ const CustomSolutions = () => {
                     />
                     <AdvantagePanel
                         className="xl:h-full md:h-[296px] xl:basis-[416px]"
-                        title="Персонализированные решения  для решения задач бизнеса"
+                        title="Персонализированные решения для бизнес задач"
                         description="Создаем ИИ, точно соответствующий потребностям вашего бизнеса"
                         icon={<RiShakeHandsLine size={24} color="var(--color-neutral-text-heading)"/>}
                     />
