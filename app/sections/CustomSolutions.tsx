@@ -27,7 +27,7 @@ const CustomSolutions = () => {
                     />
                     <AdvantagePanel
                         className="xl:h-full md:h-[296px] xl:basis-[416px]"
-                        title="Собственные наработки и инновации по высоким стандартам"
+                        title="Собственные наработки и инновации  по высоким стандартам"
                         description="Разрабатываем решения, основанные на уникальных инновациях и актуальных тенденциях в сфере ИИ"
                         icon={<RiCodeAiFill size={24} color="var(--color-neutral-text-heading)"/>}
                     />
