@@ -2,17 +2,11 @@
 
 import React from 'react';
 import Section from "@/app/components/Section";
-import ChipGroup from "@/app/components/ui/ChipGroup";
-import Chip from "@/app/components/ui/Chip";
 import TiltedCards from "@/app/components/TiltedCards";
 import AdvantagePanel from "@/app/components/AdvantagePanel";
-import {RiBarChartBoxAiLine, RiChatAiLine, RiChatSmileAiLine} from "@remixicon/react";
 import RotatingCircle from "@/app/components/RotatingCircle";
-import {useBreakpoint} from "@/app/hooks/useBreakpoint";
 
 const TransformBusinessAi = () => {
-
-    const breakpoint = useBreakpoint();
 
     return (
         <Section
@@ -22,7 +16,7 @@ const TransformBusinessAi = () => {
             </>}
             beforeContent={<RotatingCircle className="size-[402px] absolute -left-[120px] -top-[80px]"/>}
             afterContainer={(
-                <TiltedCards className="mt-1x-large relative z-30 md:block hidden">
+                <TiltedCards className="relative z-30 md:block hidden">
                     <AdvantagePanel
                         className="md:h-[512px]"
                         title="Интерактивные чат-робо﻿ты"
@@ -33,7 +27,7 @@ const TransformBusinessAi = () => {
                             - Повышают качество сервиса<br/>
                             - Легко интегрируются с CRM<br/>
                         </>}
-                        icon={<RiChatAiLine size={24} color="var(--color-neutral-text-heading)"/>}
+                        src="/advantages-panels/1.png"
                     />
                     <AdvantagePanel
                         className="md:h-[512px]"
@@ -45,7 +39,7 @@ const TransformBusinessAi = () => {
                             - Предотвращают риски<br/>
                             Принимайте только обоснованные решения<br/>
                         </>}
-                        icon={<RiChatSmileAiLine size={24} color="var(--color-neutral-text-heading)"/>}
+                        src="/advantages-panels/2.png"
                     />
                     <AdvantagePanel
                         className="md:h-[512px]"
@@ -55,19 +49,19 @@ const TransformBusinessAi = () => {
                             - Отвечает на все вопросы после ﻿покупки <br/>
                             - Освобождает ресурсы вашего бизнеса
                         </>}
-                        icon={<RiBarChartBoxAiLine size={24} color="var(--color-neutral-text-heading)"/>}
+                        src="/advantages-panels/3.png"
                     />
                 </TiltedCards>
             )}
         >
-            <ChipGroup className="self-center">
-                <Chip size={breakpoint === "xl" || breakpoint === "md" ? 'large' : 'normal'} isDisabled={true}>Повысьте
-                    эффективность</Chip>
-                <Chip size={breakpoint === "xl" || breakpoint === "md" ? 'large' : 'normal'} isDisabled={true}>Ускорьте
-                    процессы</Chip>
-                <Chip size={breakpoint === "xl" || breakpoint === "md" ? 'large' : 'normal'} isDisabled={true}>Увеличьте
-                    прибыль</Chip>
-            </ChipGroup>
+            {/*<ChipGroup className="self-center">*/}
+            {/*    <Chip size={breakpoint === "xl" || breakpoint === "md" ? 'large' : 'normal'} isDisabled={true}>Повысьте*/}
+            {/*        эффективность</Chip>*/}
+            {/*    <Chip size={breakpoint === "xl" || breakpoint === "md" ? 'large' : 'normal'} isDisabled={true}>Ускорьте*/}
+            {/*        процессы</Chip>*/}
+            {/*    <Chip size={breakpoint === "xl" || breakpoint === "md" ? 'large' : 'normal'} isDisabled={true}>Увеличьте*/}
+            {/*        прибыль</Chip>*/}
+            {/*</ChipGroup>*/}
             <div className=" flex-col max-md:flex hidden gap-large">
                 <AdvantagePanel
                     className="md:h-[512px]"
@@ -79,7 +73,7 @@ const TransformBusinessAi = () => {
                         - Повышают качество сервиса<br/>
                         - Легко интегрируются с CRM<br/>
                     </>}
-                    icon={<RiChatAiLine size={24} color="var(--color-neutral-text-heading)"/>}
+                    src="/advantages-panels/1.png"
                 />
                 <AdvantagePanel
                     className="md:h-[512px]"
@@ -91,7 +85,7 @@ const TransformBusinessAi = () => {
                         - Предотвращают риски<br/>
                         Принимайте только обоснованные решения<br/>
                     </>}
-                    icon={<RiChatSmileAiLine size={24} color="var(--color-neutral-text-heading)"/>}
+                    src="/advantages-panels/2.png"
                 />
                 <AdvantagePanel
                     className="md:h-[512px]"
@@ -101,7 +95,7 @@ const TransformBusinessAi = () => {
                         - Отвечает на все вопросы после ﻿покупки <br/>
                         - Освобождает ресурсы вашего бизнеса
                     </>}
-                    icon={<RiBarChartBoxAiLine size={24} color="var(--color-neutral-text-heading)"/>}
+                    src="/advantages-panels/3.png"
                 />
             </div>
         </Section>

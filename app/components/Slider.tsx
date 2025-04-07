@@ -18,6 +18,27 @@ export interface SliderProps {
     slides: Slide[];
 }
 
+// Анимация для текста
+const textAnimation = {
+    hidden: {opacity: 0, y: 20},
+    visible: {opacity: 1, y: 0, transition: {duration: 0.5}},
+    exit: {opacity: 0, y: -20},
+};
+
+// Анимация для изображения (вправо)
+const imageAnimationRight = {
+    hidden: {opacity: 0, x: -100}, // Изображение уходит влево
+    visible: {opacity: 1, x: 0, transition: {duration: 0.5}},
+    exit: {opacity: 0, x: 150}, // Изображение приходит справа
+};
+
+// Анимация для изображения (влево)
+const imageAnimationLeft = {
+    hidden: {opacity: 0, x: 150}, // Изображение уходит вправо
+    visible: {opacity: 1, x: 0, transition: {duration: 0.5}},
+    exit: {opacity: 0, x: -100}, // Изображение приходит слева
+};
+
 const Slider: FC<SliderProps> = ({slides}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState<"left" | "right">("right"); // Направление переключения
@@ -30,27 +51,6 @@ const Slider: FC<SliderProps> = ({slides}) => {
     const prevSlide = () => {
         setDirection("left"); // Устанавливаем направление влево
         setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
-    };
-
-    // Анимация для текста
-    const textAnimation = {
-        hidden: {opacity: 0, y: 20},
-        visible: {opacity: 1, y: 0, transition: {duration: 0.5}},
-        exit: {opacity: 0, y: -20},
-    };
-
-    // Анимация для изображения (вправо)
-    const imageAnimationRight = {
-        hidden: {opacity: 0, x: -100}, // Изображение уходит влево
-        visible: {opacity: 1, x: 0, transition: {duration: 0.5}},
-        exit: {opacity: 0, x: 150}, // Изображение приходит справа
-    };
-
-    // Анимация для изображения (влево)
-    const imageAnimationLeft = {
-        hidden: {opacity: 0, x: 150}, // Изображение уходит вправо
-        visible: {opacity: 1, x: 0, transition: {duration: 0.5}},
-        exit: {opacity: 0, x: -100}, // Изображение приходит слева
     };
 
     const Actions: FC<{ className: string }> = ({className}) => {

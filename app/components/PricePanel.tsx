@@ -1,18 +1,20 @@
 import React, {FC, ReactNode} from 'react';
 import LandingPanel, {LandingPanelProps} from "@/app/components/LandingPanel";
 import cn from "classnames";
+import {RiCheckLine} from "@remixicon/react";
 
-export interface PricePanelProps extends LandingPanelProps {
+export interface PricePanelProps extends Omit<LandingPanelProps, 'description'> {
     icon: ReactNode
     sale: string;
     price: string
+    descriptions: string[]
 }
 
 export const formatPrice = (price: number): string => {
     return price.toLocaleString("ru-RU") + '₽';
 };
 
-const PricePanel: FC<PricePanelProps> = ({title, description, sale, price, icon, ...props}) => {
+const PricePanel: FC<PricePanelProps> = ({title, descriptions, sale, price, icon, ...props}) => {
     return (
         <LandingPanel
             {...props}
@@ -28,7 +30,16 @@ const PricePanel: FC<PricePanelProps> = ({title, description, sale, price, icon,
                 </div>
                 <div className="space-y-normal">
                     <h5>{title}</h5>
-                    <p className="text-body-big text-neutral-text-secondary">{description}</p>
+                    {descriptions.map((description,i) => (
+                        <div key={i} className="flex gap-normal">
+                            <div
+                                className="circle rounded-full flex items-center justify-center size-[28px] bg-neutral-bg-on-subtle-default shrink-0">
+                                <RiCheckLine size={16} color="var(--color-neutral-text-heading)"></RiCheckLine>
+                            </div>
+                            <p className="text-body-big text-neutral-text-secondary">{description}</p>
+                        </div>
+                    ))}
+
                 </div>
             </div>
             <div className="space-y-normal mt-auto">
