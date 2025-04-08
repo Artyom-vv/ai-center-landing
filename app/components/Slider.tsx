@@ -110,7 +110,7 @@ const Slider: FC<SliderProps> = ({slides}) => {
                 <AnimatePresence mode="wait" custom={direction}>
                     <motion.img
                         key={currentIndex}
-                        className="h-full xl:max-h-[480px] md:max-h-[320px] max-h-[153px] bg-neutral-bg-on-subtle-default rounded-[8px] grow xl:max-w-[800px] md:max-w-[568px] max-w-[272px] object-cover relative z-[1] max-md:mt-auto"
+                        className="xl:max-h-[480px] xl:min-h-[480px] md:max-h-[320px] md:min-h-[320px] max-h-[153px] min-h-[153px] bg-neutral-bg-on-subtle-default rounded-[8px] grow xl:max-w-[800px] md:max-w-[568px] max-w-[272px] object-cover relative z-[1] max-md:mt-auto"
                         src={slides[currentIndex]?.src}
                         alt={slides[currentIndex]?.title}
                         initial="hidden"
